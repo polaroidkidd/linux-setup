@@ -1,0 +1,39 @@
+{
+  "name": "linux-setup",
+  "version": "1.0.0",
+  "description": "Repo for dot-files and setup scripts for a fresh Ubuntu-Server installation",
+  "main": "setup.sh",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polaroidkidd/linux-setup.git"
+  },
+  "keywords": [
+    "linux",
+    "i3",
+    "i3-wm",
+    "i3-gaps",
+    "i3lock-fancy",
+    "polybar",
+    "tryone-compton"
+  ],
+  "author": "Daniel Einars",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/polaroidkidd/linux-setup/issues"
+  },
+  "homepage": "https://github.com/polaroidkidd/linux-setup#readme",
+  "dependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.1.0",
+    "standard-version": "^7.0.1"
+  }
+}
