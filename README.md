@@ -1,29 +1,79 @@
-Repo for dot-files and setup scripts for a fresh Ubuntu-Server installation
+# Linux-Setup for dell xps 9370
 
+This setup script will install and configure i3-gaps with TryOne's Compton implementation for a frosted-glass terminal and rofi. This script has been tested on a clean (completly empty) Ubuntu Server 18.04 installation.
 
-# i3-gaps
-  * GitHub: 
-  * Instructions: `sudo apt install xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake && git clone https://github.com/Airblader/xcb-util-xrm && cd xcb-util-xrm && git submodule update --init && ./autogen.sh --prefix=/usr && make sudo make install`
+## Tools
+  * vs code
+  * hub cli
+  * miniconda
+  * intellij idea ultimate (no licence included)
+  * miniconda
+  * terminator
+  * firefox
+  * google-chrome
+  * brave browser
+  * keepassX
+  * copyQ
+  * polybar (with included Roboto Mono font)
 
-# TryOne-Compton
-  * Dependencies
-    `sudo apt install pkg-config make gcc libev-libevent-dev libdbus-1-dev libgl1-mesa-dev libgles2-mesa-dev libxcb-present-dev libxcb-sync-dev libxcb-damage0-dev libx11-xcb-dev libev4 libev-dev uthash-dev libxdg-basedir-dev libconfig-dev meson libx11-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-shape0-dev libxcb-xkb-dev pkg-config xcb-proto libxcb-xrm-dev libxcb-composite0-dev xcb libxcb-ewmh2 libxcb1-dev libxcb-keysyms1-dev libxcb-util0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcomposite-dev libxrandr-dev libxinerama-dev make cmake automake autoconf xdotool`
-  * GitHub URL: git@github.com:tryone144/compton.git
-  * Instructions: `make && make docs && sudo make install`
+## i3 HotKeys
 
-# Light
-  * GitHub URL: git@github.com:haikarainen/light.git
-  * Instructions:
-  `cd /tmp && mkdir light && cd light && wget https://github.com/haikarainen/light/releases/download/v1.2/light-1.2.tar.gz && tar xf light-1.2.tar.gz && cd light-1.2 && ./configure && make && sudo make install`
+modkey                  => left windows
+terminator              => mod+y
+brave-browser           => mod+g
+firefox                 => mod+c
+rofi                    => mod+tab
+bluetooth               => mod+b
+copyq                   => left_alt + q
+switch workspace left   => mod+left_ctrl+a
+switch workspace right  => mod+left_ctrl+s
 
-# Network-Manager
-  * Deps: `sudo apt install network-manager network-manager-config-connectivity-ubuntu network-manager-gnome`
-  * Conf File Contents:
-`
-[keyfile]
-managed-devices=*,except:type:loopbark,docker,except:type:wwan
-`
-  * Location: `/usr/lib/NetworkManager/conf.d/globally-managed-devices.conf`
+## Touchpad Gestures
 
-# Fusuma
-  * `sudo gpasswd -a $USER input && sudo apt-get install libinput-tools ruby && sudo gem install fusuma`
+Touchpad Gestures are handled with fusuma and xdotool. The following configs have been applied. You can change these in the `~/.config/fusuma/config.yml` file. **Note: The pinch does not always work as expected when trying to zoom in and out on websites. I've been using `ctrl+dash` and `ctrl+left_shift+^` to zoom in and out.
+
+```
+swipe:
+  3:
+    left:
+      command: 'xdotool key ctrl+Prior'
+      threshold: 0.5
+    right:
+      command: 'xdotool key ctrl+Next'
+      threshold: 0.5
+    up:
+      command: 'xdotool key ctrl+t'
+      threshold: 0.5
+    down:
+      command: 'xdotool key ctrl+w'
+      threshold: 0.5
+  4:
+    left:
+      command: 'xdotool key Super_L+ctrl+a'
+      threshold: 0.5
+    right:
+      command: 'xdotool key Super_L+ctrl+s'
+      threshold: 0.5
+    up:
+      command: 'xdotool key Super_L+Tab'
+      threshold: 0.5
+    down:
+      command: 'xdotool key Super_L+shift+q'
+      threshold: 0.8
+pinch:
+  2:
+    in:
+      command: 'xdotool key ctrl+plus'
+      threshold: 0.1
+    out:
+      command: 'xdotool key ctrl+minus'
+      threshold: 0.1
+
+threshold:
+  swipe: 1
+  pinch: 0.1
+
+interval:
+  swipe: 1
+  pinch: 0.1
+```
