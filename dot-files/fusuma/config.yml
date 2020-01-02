@@ -1,0 +1,44 @@
+swipe:
+  3:
+    left:
+      command: 'xdotool key ctrl+Prior'
+      threshold: 0.5
+    right:
+      command: 'xdotool key ctrl+Next'
+      threshold: 0.5
+    up:
+      command: 'xdotool key ctrl+t'
+      threshold: 0.5
+    down:
+      command: 'xdotool key ctrl+w'
+      threshold: 0.5
+  4:
+    left:
+      command: 'xdotool key Super_L+ctrl+a'
+      threshold: 0.5
+    right:
+      command: 'xdotool key Super_L+ctrl+s'
+      threshold: 0.5
+    up:
+      command: 'xdotool key Super_L+Tab'
+      threshold: 0.5
+    down:
+      command: 'xdotool key Super_L+shift+q'
+      threshold: 0.8
+pinch:
+  2:
+    in:
+      command: 'xdotool key ctrl+plus'
+      threshold: 0.1
+    out:
+      command: 'xdotool key ctrl+minus'
+      threshold: 0.1
+
+threshold:
+  swipe: 1
+  pinch: 0.1
+
+interval:
+  swipe: 1
+  pinch: 0.1
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=WhatsApp
+GenericName=Chat
+Icon=display
+Exec=brave-browser --app=https://web.whatsapp.com/
+Terminal=false
+Type=Application
+Categories=Chat;
+StartupNotify=true

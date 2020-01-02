@@ -1,0 +1,372 @@
+set $mod Mod4
+
+new_window pixel 1
+new_float normal
+
+hide_edge_borders none
+
+bindsym $mod+u border none
+#bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
+
+font xft:URWGothic-Book 11
+
+floating_modifier $mod
+
+bindsym $mod+y exec terminator # i3-aensible-terminal
+# bindsym $mod+y exec gnome-terminal
+
+
+# Window kill command
+bindsym $mod+Shift+q kill
+
+
+# start program launcher
+bindsym $mod+d exec dmenu_run
+# Start Rofi
+# bindsym $mod+Tab exec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $mod+Tab exec ~/.config/rofi/rofi.sh
+# change focus
+bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# workspace back and forth (with/without active container)
+workspace_auto_back_and_forth no
+#bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# split orientation
+bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# navigate workspaces next / previous
+bindsym $mod+Ctrl+S workspace next
+bindsym $mod+Ctrl+A workspace prev
+
+# workspaces
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Move to workspace with focused container
+bindsym $mod+Ctrl+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws8; workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws8; workspace $ws10
+
+
+
+# Open specific applications in floating mode
+for_window [class="Emulator"] floating enable sticky disable border none  
+for_window [title="^Android Emulator -"] floating enable sticky disable border none
+for_window [title="Udeler | Udemy Course Downloader"] floating disable sticky disable enable boarder normal 
+for_window [class="Keepassx"] floating enable sticky enable border normal
+for_window [title="win0" ] floating enable
+
+
+# switch to workspace with urgent window automatically
+# for_window [urgent=latest] focus  
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Set shut down, restart and locking features
+#bindsym $mod+x mode "$mode_system"
+#set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+#mode "$mode_system" {
+#    bindsym l exec --no-startup-id i3exit lock, mode "default"
+#    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#    bindsym e exec --no-startup-id i3exit logout, mode "default"
+#    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+#
+#    # exit system mode: "Enter" or "Escape"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
+
+# bindsym $mod+l exec i3lock -i ~/DevTools/i3wm-themer/src/wallpapers/007.png
+bindsym $mod+l exec i3lock-fancy
+
+# Change window size using only keyboard
+bindsym $mod+Ctrl+Right resize shrink width 15 px or 2 ppt
+bindsym $mod+Ctrl+Up resize grow height 15 px or 2 ppt
+bindsym $mod+Ctrl+Down  resize shrink height 15 px or 2 ppt
+bindsym $mod+Ctrl+Left resize grow width 15 px or 2 ppt
+
+# Autostart applications
+exec --no-startup-id feh --bg-scale --no-xinerama /home/dle/.config/i3/mountains.jpg
+exec --no-startup-id /usr/local/bin/compton
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+# exec_always --no-startup-id compton --config /home/dle/.config/compton.conf -b
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id bash /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
+
+# exec_always --no-startup-id polybar i3wmthemer_bar
+# Theme colors
+client.focused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+client.urgent #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+
+client.background #1f1f1f
+
+# Gaps
+gaps inner 5
+gaps outer 3
+
+smart_gaps on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+b exec --no-startup-id blueman-manager
+focus_follows_mouse no
+
+for_window [class="copyq"] floating enable
+# for_window [class="fsearch"] floating enable
+
+exec_always --no-startup-id copyq
+
+# Restore GNOME's settings
+#exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+exec /usr/libexec/gnome-settings-daemon
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# Enable Tapping on Keyboard
+exec_always xinput set-prop  "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
+exec_always xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Accel Speed" 1
+
+
+exec --no-startup-id nextcloud start
+# Enable Touchpad Gestures with fusuma (config is in ~/.config/fusuma/config.yml)
+exec --no-startup-id /usr/local/bin/fusuma -d -c ~/.config/fusuma/config.yml
+
+
+# Shortcut to Start Chrome
+bindsym $mod+c exec firefox
+# bindsym $mod+g exec google-chrome
+bindsym $mod+g exec brave-browser
+
+# Enable Audio Controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+exec --no-startup-id pasystray
+
+
+# Dell Screen Brithness Commands
+# Keykode is XF86MonBrightnessUp and XF86MonBrightnessDown
+# Requires you get the keycodes with xev and install light from 
+# https://github.com/haikarainen/light
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+
+# bindsym XF86AudioPlay exec playerctl play
+# bindsym XF86AudioPause exec playerctl pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
+
+
+# Disable Focus Wraping
+focus_wrapping no
+
+# Define Colors
+set $bg     #2c2c2e
+set $fg     #9f9f9f
+set $hi     #efef8f
+set $ac     #00d7ff
+set $tx     #040404
+set $ia     #9f9f9f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+set $bg_color  #00FFFFFF                            
+set $text_color  #ffffff
+set $htext_color  #B55252
+
+# set some nice colors      border     background  text
+client.focused              $fg        $hi         $tx
+client.unfocused            $fg        $bg         $ia
+client.focused_inactive     $ac        $bg         $ac
+client.urgent               $rd        $rd         $tx
+
+
+# Enabled i3-volume
+set $volumepath ~/DevTools/i3-volume
+
+# Command for the status line (used with -t, requires -u)
+#   ie: i3blocks, i3status
+set $statuscmd i3status
+
+# Signal used to update the status line (used with -u, requires -t)
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage (used with -i, -d)
+set $volumestep 5
+
+# alsa-utils settings when not using pulseaudio-utils
+#
+# To configure a default card, see https://www.alsa-project.org/main/index.php/Asoundrc
+#
+# Card number to control. (used with -a and -c)
+#   If not specified, i3-volume will let `amixer` use a default.
+#   List cards: aplay -l
+#set $alsacard 1
+
+# Uncomment to use alsa-utils (append "-c $alsacard" without quotes to override default card)
+#bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
+#bindsym XF86AudioLowerVolume exec $volumepath/volume -anp -d $volumestep -t $statuscmd -u $statussig
+#bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $statussig
+
+# pulseaudio-utils settings when not using alsa-utils
+#
+# Symbolic name for sink (numeric index not supported) (used with -s $sinkname)
+#   Recommended: comment out this setting and omit the -s option to use default sink
+#   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
+#set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
+
+
+# Set Screen Time Out
+exec_always --no-startup-id xset dpms 0 0 600
+
+# Start blueman-applet
+exec_always --no-startup-id exec blueman-applet
+
+
+
+exec_always --no-startup-id xset +fp /home/dle/.local/share/fonts
+exec_always --no-startup-id xset fp rehash

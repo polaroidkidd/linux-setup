@@ -1,0 +1,9 @@
+[submodule "compton"]
+	path = compton
+	url = https://github.com/tryone144/compton.git
+[submodule "xcb-util-xrm"]
+	path = xcb-util-xrm
+	url = https://github.com/Airblader/xcb-util-xrm
+[submodule "i3-gaps"]
+	path = i3
+	url = https://www.github.com/Airblader/i3
