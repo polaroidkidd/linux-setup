@@ -187,7 +187,7 @@ bindsym $mod+Ctrl+Left resize grow width 15 px or 2 ppt
 
 # Autostart applications
 # exec_always --no-startup-id feh --bg-scale --no-xinerama /home/dle/.config/i3/mountains.jpg
-# exec_always --no-startup-id compton
+exec --no-startup-id compton
 exec --no-startup-id nm-applet
 exec_always --no-startup-id bash /$HOME/.config/polybar/launch.sh
 
@@ -261,7 +261,7 @@ exec_always xinput set-prop  "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping 
 exec_always xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Accel Speed" 1
 
 # Next Cloud
-# exec_always --no-startup-id nextcloud
+exec --no-startup-id nextcloud
 
 # Enable Touchpad Gestures with fusuma (config is in ~/.config/fusuma/config.yml)
 exec --no-startup-id /usr/local/bin/fusuma -d -c ~/.config/fusuma/config.yml
