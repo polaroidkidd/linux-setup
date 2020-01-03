@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/polaroidkidd/linux-setup/compare/v1.3.0...v1.3.1) (2020-01-03)
+
+
+### Bug Fixes
+
+* added missing system stats again ([ec132cb](https://github.com/polaroidkidd/linux-setup/commit/ec132cb6b9b957b41ce4f18bcdcaae27e628dc9c))
+* switched polybar to mono spaced font ([3945653](https://github.com/polaroidkidd/linux-setup/commit/3945653ab30aba31dc63d8ac67bfea7eb1eb9595))
+
 ## [1.3.0](https://github.com/polaroidkidd/linux-setup/compare/v1.2.0...v1.3.0) (2020-01-03)
 
 
