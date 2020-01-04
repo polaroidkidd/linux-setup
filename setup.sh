@@ -1,39 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -e
 
-# Update & Upgrade
-sudo apt update
-sudo apt upgrade -y
-# Add PPA Repositories
-# VS Code
-echo "****************************************"
-echo "Adding Code"
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt update
-# Spotify
-echo "****************************************"
-echo "Adding Spotify"
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update
-# Brave Browser
-echo "****************************************"
-echo "Adding Brave"
-sudo apt install -y apt-transport-https curl
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-# Polybar
-echo "****************************************"
-echo "Adding Polybad"
-sudo add-apt-repository -y ppa:kgilmer/speed-ricer
-sudo apt update
-# NextCloud
-echo "****************************************"
-echo "Adding NextCloud"
-sudo add-apt-repository -y ppa:nextcloud-devs/client
+# Update Packages
 sudo apt update
 
 # Do all work in the tmp directory
@@ -42,14 +10,16 @@ cd ~/temporary-linux-setup
 
 # Clone this repository
 git clone https://github.com/polaroidkidd/linux-setup.git
-# update permissions
-sudo chmod -R a+rw linux-setup
 
 # Init Submodules
 cd linux-setup
-git checkout feature/additional-tools
+git checkout feature/random-wallpaper
 git submodule update --init --recursive
 
+# update permissions
+cd ..
+sudo chmod -R a+rw linux-setup
+cd linux-setup
 
 # get the path to this script
 WORK_PATH=`dirname "$0"`
@@ -116,14 +86,14 @@ sudo cp $WORK_PATH/dot-files/intel/20-intel.conf /usr/share/X11/xorg.conf.d/20-i
 cp $WORK_PATH/dot-files/oh-my-zsh/.zshrc ~/.zshrc
 
 # polybar
-sudo apt install -y polybar
+sudo apt install -y polybar 
+
 
 # wallpaper
 sudo apt install -y feh
-cp $WORK_PATH/assets/mountains.jpg ~/.config/i3/
 
 # VS Code
-sudo apt install apt-transport-https code
+sudo apt install -y apt-transport-https code
 
 # pulse audio
 sudo apt install -y pulseaudio pulseaudio-module-bluetooth pulseaudio-utils
@@ -143,7 +113,7 @@ wget https://download.jetbrains.com/idea/ideaIU-2019.3.1.tar.gz
 tar xzvf ideaIU-2019.3.1.tar.gz -C ~/DevTools/IntelliJ
 
 # nextcloud
-sudo apt install nextcloud-client
+sudo apt install -y nextcloud-client
 
 
 # NVM
@@ -172,8 +142,11 @@ sudo apt install -y copyq
 # keepassX
 sudo apt install -y keepassx
 
-# Install Roboto Mono
-unzip  $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts  
+# Install Fonts
+unzip  $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
+cp -r $WORK_PATH/dot-files/polybar/fonts ${HOME}/.fonts
+# enable bitmap fonts
+sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
 sudo fc-cache -f -v
 
 

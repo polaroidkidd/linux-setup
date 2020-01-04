@@ -16,6 +16,37 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
   * copyQ
   * polybar (with included Roboto Mono font)
 
+## PPAs
+These PPA's are required for the script to work. I've tried adding them all in the setup script but either Speed-Ricer or Nextcloud fails randomly when attempting to retrieve the GPG-Key.
+I've added scripts to add these PPAs since typing all this out can be a pain. They've been copy & pasted directly from the spotify/brave/microsoft website.
+### VS Code
+```
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+```
+
+### Spotify
+```
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+```
+### Brave Browser
+```
+sudo apt install -y apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+```
+### Polybar (Speed Ricer)
+```
+sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+```
+### NextCloud
+```
+sudo add-apt-repository -y ppa:nextcloud-devs/client
+```
+
+
 ## i3 HotKeys
 
 modkey                  => left windows

@@ -186,7 +186,9 @@ bindsym $mod+Ctrl+Down  resize shrink height 15 px or 2 ppt
 bindsym $mod+Ctrl+Left resize grow width 15 px or 2 ppt
 
 # Autostart applications
-# exec_always --no-startup-id feh --bg-scale --no-xinerama /home/dle/.config/i3/mountains.jpg
+# exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id feh --randomize --bg-scale ~/.config/polybar/wallpaper/*
+bindsym $mod+shift+w exec feh --randomize --bg-scale ~/.config/polybar/wallpaper/*
 exec --no-startup-id compton
 exec --no-startup-id nm-applet
 exec_always --no-startup-id bash /$HOME/.config/polybar/launch.sh
@@ -341,5 +343,36 @@ exec_always --no-startup-id exec blueman-applet
 
 
 # Fonts
-exec_always --no-startup-id xset +fp /home/dle/.local/share/fonts
+exec_always --no-startup-id xset +fp ~/.local/share/fonts
 exec_always --no-startup-id xset fp rehash
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 2 px or 2 ppt
+        bindsym Down resize grow height 2 px or 2 ppt
+        bindsym Up resize shrink height 2 px or 2 ppt
+        bindsym Right resize grow width 2 px or 2 ppt
+	bindsym Shift+Left resize shrink width 6 px or 6 ppt
+        bindsym Shift+Down resize grow height 6 px or 6 ppt
+        bindsym Shift+Up resize shrink height 6 px or 6 ppt
+        bindsym Shift+Right resize grow width 6 px or 6 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"

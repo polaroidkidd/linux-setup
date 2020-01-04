@@ -3,6 +3,9 @@
 ## Author : Aditya Shakya
 ## Github : adi1090x
 
+## Amendments: Daniel Einars
+## Github : polaroidkidd
+
 # Custom Rofi Script
 
 BORDER="#00acc1"
@@ -38,39 +41,3 @@ LIGHT_GREEN="#7cb342"
 
 
 SDIR="$HOME/.config/polybar/scripts"
-
-# Launch Rofi
-MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'Style :' \
--hide-scrollbar true \
--bw 2 \
--lines 7 \
--line-padding 8 \
--padding 20 \
--width 15 \
--xoffset -10 -yoffset -52 \
--location 5 \
--columns 1 \
--show-icons -icon-theme "Papirus" \
--font "Noto Sans 9" \
--color-enabled true \
--color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
--color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
--color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
--color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< "> Budgie|> Deepin|> Elementary_dark|> Elementary_light|> Gnome|> Kde|> Kde_alt|> Liri|> Mint|> Ubuntu_gnome|> Ubuntu_unity|> Xubuntu|> Zorin")"
-            case "$MENU" in
-				## Colors
-				*Budgie) $SDIR/style -budgie ;;
-				*Deepin) $SDIR/style -deepin ;;
-				*Elementary_dark) $SDIR/style -elementary_dark ;;
-				*Elementary_light) $SDIR/style -elementary_light ;;
-				*Gnome) $SDIR/style -gnome ;;
-				*Kde) $SDIR/style -kde ;;
-				*Kde_alt) $SDIR/style -kde_alt ;;
-				*Liri) $SDIR/style -liri ;;
-				*Mint) $SDIR/style -mint ;;
-				*Ubuntu_gnome) $SDIR/style -ubuntu_gnome ;;
-				*Ubuntu_unity) $SDIR/style -ubuntu_unity ;;
-				*Xubuntu) $SDIR/style -xubuntu ;;
-				*Zorin) $SDIR/style -zorin ;;
-            esac
