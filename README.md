@@ -63,6 +63,8 @@ sudo add-apt-repository -y ppa:nextcloud-devs/client
 |-|-|
 |modkey|`left windows`|
 |terminator|`mod+y`|
+|change wallpaper|`mod+left_shift+w`|
+|reload polybar|`mod+left_shift+p`|
 |brave-browser|`mod+g`|
 |firefox|`mod+c`|
 |rofi|`mod+tab`|
@@ -70,6 +72,8 @@ sudo add-apt-repository -y ppa:nextcloud-devs/client
 |copyq|`left_alt + q`|
 |switch workspace left|`mod+left_ctrl+a`|
 |switch workspace right|`mod+left_ctrl+s`|
+
+**Note:** I've added shortcuts to reload the polybar separately from everything. Polybar does not reload the frosted glass formatting when the background is changed. Therefore, if you previous wallpaper was white and the current one is black, Polybar will retain the white frosted glass. With the added shortcuts you can cycle through wallpapers using `mod+left_shift+w` until you find one and then reload the polybar uisng `mod+left_shift+p` to update the forsted glass colour.
 
 ## Touchpad Gestures
 

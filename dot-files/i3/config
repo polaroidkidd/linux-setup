@@ -192,6 +192,8 @@ bindsym $mod+shift+w exec feh --randomize --bg-scale ~/.config/polybar/wallpaper
 exec --no-startup-id compton
 exec --no-startup-id nm-applet
 exec_always --no-startup-id bash /$HOME/.config/polybar/launch.sh
+bindsym $mod+shift+p exec /$HOME/.config/polybar/launch.sh
+
 
 # Theme colors
 client.focused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
