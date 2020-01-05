@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/polaroidkidd/linux-setup/compare/v1.5.0...v1.5.1) (2020-01-05)
+
+
+### Bug Fixes
+
+* removed <ramp> from temp module ([286a0ee](https://github.com/polaroidkidd/linux-setup/commit/286a0eee9f19fd68c7522ae0f7196a23a36723d0))
+
 ## [1.5.0](https://github.com/polaroidkidd/linux-setup/compare/v1.4.1...v1.5.0) (2020-01-04)
 
 
