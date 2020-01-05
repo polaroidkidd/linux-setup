@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/polaroidkidd/linux-setup/compare/v1.5.1...v1.6.0) (2020-01-05)
+
+
+### Features
+
+* updated i3 shortcuts ([ab1fd28](https://github.com/polaroidkidd/linux-setup/commit/ab1fd2867ce0f5883113ba9a6c2cc262baefb350))
+
 ### [1.5.1](https://github.com/polaroidkidd/linux-setup/compare/v1.5.0...v1.5.1) (2020-01-05)
 
 
