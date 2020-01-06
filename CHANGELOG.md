@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/polaroidkidd/linux-setup/compare/v1.6.0...v1.7.0) (2020-01-06)
+
+
+### Features
+
+* added docker and docker-compose ([f0a0df1](https://github.com/polaroidkidd/linux-setup/commit/f0a0df1758d2ba6bbfba6fb62a72b70daaba1f13))
+
 ## [1.6.0](https://github.com/polaroidkidd/linux-setup/compare/v1.5.1...v1.6.0) (2020-01-05)
 
 
