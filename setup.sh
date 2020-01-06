@@ -158,10 +158,6 @@ sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-
-
-
-
 # Network-Manager
 cd $WORK_PATH
 sudo apt install -y network-manager network-manager-config-connectivity-ubuntu network-manager-gnome
@@ -172,6 +168,9 @@ sudo apt install -y zsh
 echo "y" | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo chsh -s /usr/bin/zsh root
 sudo chsh -s /usr/bin/zsh $USER
+
+# sdk man
+curl -s "https://get.sdkman.io" | bash
 
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt
