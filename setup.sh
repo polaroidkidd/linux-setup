@@ -173,6 +173,11 @@ echo "y" | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/m
 sudo chsh -s /usr/bin/zsh root
 sudo chsh -s /usr/bin/zsh $USER
 
+# Space Theme
+git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt
+ln -s ~/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/themes/spaceship.zsh-theme
+
+
 # CleanUp
 cd ~/
 sudo rm -rf ~/temporary-linux-setupsudo 
