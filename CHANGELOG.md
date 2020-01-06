@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/polaroidkidd/linux-setup/compare/v1.8.0...v1.9.0) (2020-01-06)
+
+
+### Features
+
+* added sdk man for lib installs ([414515f](https://github.com/polaroidkidd/linux-setup/commit/414515f2072e39b1570f1e4107fe5e635a90e97c))
+
 ## [1.8.0](https://github.com/polaroidkidd/linux-setup/compare/v1.7.0...v1.8.0) (2020-01-06)
 
 
