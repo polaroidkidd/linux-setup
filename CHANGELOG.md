@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/polaroidkidd/linux-setup/compare/v1.9.0...v1.10.0) (2020-01-06)
+
+
+### Features
+
+* added postman via snap ([d37c7c5](https://github.com/polaroidkidd/linux-setup/commit/d37c7c50796bdc1a06bfda344e005382bb0a12f2))
+
 ## [1.9.0](https://github.com/polaroidkidd/linux-setup/compare/v1.8.0...v1.9.0) (2020-01-06)
 
 
