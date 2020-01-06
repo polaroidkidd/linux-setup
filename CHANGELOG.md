@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/polaroidkidd/linux-setup/compare/v1.7.0...v1.8.0) (2020-01-06)
+
+
+### Features
+
+* added polybar on all screens and spaceship prompt ([a3853ea](https://github.com/polaroidkidd/linux-setup/commit/a3853eaefba201d6d31784c4bf85f21a0a5ebd23))
+
 ## [1.7.0](https://github.com/polaroidkidd/linux-setup/compare/v1.6.0...v1.7.0) (2020-01-06)
 
 
