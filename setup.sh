@@ -13,7 +13,7 @@ git clone https://github.com/polaroidkidd/linux-setup.git
 
 # Init Submodules
 cd linux-setup
-git checkout feature/random-wallpaper
+git checkout feature/docker-and-docker-compose
 git submodule update --init --recursive
 
 # update permissions
@@ -148,6 +148,18 @@ cp -r $WORK_PATH/dot-files/polybar/fonts ${HOME}/.fonts
 # enable bitmap fonts
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
 sudo fc-cache -f -v
+
+
+# docker
+sudo sh -c "$(curl -fsSL https://get.docker.com -o get-docker.sh)"
+sudo usermod -aG docker $USER
+
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+
+
 
 
 # Network-Manager

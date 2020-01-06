@@ -16,6 +16,8 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 * keepassX
 * copyQ
 * polybar (with included Roboto Mono font)
+* docker
+* docker-compose
 
 ## PPAs
 
