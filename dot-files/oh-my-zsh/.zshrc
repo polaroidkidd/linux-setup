@@ -128,6 +128,7 @@ alias gcm="git commit -m"
 alias gp="git push"
 alias gpa="git push --all"
 alias gpt="git push --follow-tags"
+alias gip="git pull --verbose"
 
 
 # function to commit and push all with a message in format of: gcp example text [ENTER TO SEND]
@@ -176,7 +177,8 @@ function __mpvq {
 }
 alias mpvq='__mpvq'
 
-
+# Gradle Wrapper
+alias gw='./gradlew'
 
 
 #####################################################
@@ -205,3 +207,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/dle/.sdkman"
+[[ -s "/home/dle/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dle/.sdkman/bin/sdkman-init.sh"

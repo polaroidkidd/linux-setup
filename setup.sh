@@ -172,6 +172,9 @@ sudo chsh -s /usr/bin/zsh $USER
 # sdk man
 curl -s "https://get.sdkman.io" | bash
 
+# postman (snap)
+sudo snap install postman
+
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt
 ln -s ~/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/themes/spaceship.zsh-theme
