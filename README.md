@@ -20,6 +20,7 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 * docker-compose
 * sdk-man
 * postman
+* google cloud cli
 
 ## PPAs
 
