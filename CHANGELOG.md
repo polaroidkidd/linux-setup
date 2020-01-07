@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/polaroidkidd/linux-setup/compare/v1.10.2...v1.11.0) (2020-01-07)
+
+
+### Features
+
+* added google cloud sdk ([2a7a0bd](https://github.com/polaroidkidd/linux-setup/commit/2a7a0bd0c6ed9b11e6bf4dc536b9e7d41c61df35))
+
 ### [1.10.2](https://github.com/polaroidkidd/linux-setup/compare/v1.10.1...v1.10.2) (2020-01-06)
 
 
