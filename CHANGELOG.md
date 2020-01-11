@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/polaroidkidd/linux-setup/compare/v1.12.0...v1.13.0) (2020-01-11)
+
+
+### Features
+
+* multiple minor updates ([a56b888](https://github.com/polaroidkidd/linux-setup/commit/a56b8880240455d858aceb1fa23290ca2135b601))
+
 ## [1.12.0](https://github.com/polaroidkidd/linux-setup/compare/v1.11.0...v1.12.0) (2020-01-07)
 
 
