@@ -106,7 +106,7 @@ plugins=(
 )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities bitbucket.com github.com dae.cdk@ti8m.ch dae@ti8m.ch dle@ebikon
+zstyle :omz:plugins:ssh-agent identities bitbucket.com github.com dae.cdk@ti8m.ch dae@ti8m.ch dle@ebikon pi@ebikon
 zstyle :omz:plugins:ssh-agent lifetime
 
 
@@ -180,6 +180,8 @@ alias mpvq='__mpvq'
 # Gradle Wrapper
 alias gw='./gradlew'
 
+# copy pwd to clip board
+alias cpwd='pwd | xclip -sel clip'
 
 #####################################################
 ################ BEGIN  PATHS #######################
@@ -187,6 +189,15 @@ alias gw='./gradlew'
 
 # SNAP
 export PATH="$PATH:/snap/bin"
+
+# work aliases
+source ~/.aliases/ti8m
+
+
+#####################################################
+################ BEGIN  ENVS  #######################
+#####################################################
+source ~/.envs/digital-ocean
 
 
 #####################################################
@@ -207,6 +218,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dle/.sdkman"

@@ -21,6 +21,7 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 * sdk-man
 * postman
 * google cloud cli
+* openvpn
 
 ## PPAs
 
