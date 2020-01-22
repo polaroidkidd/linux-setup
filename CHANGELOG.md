@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/polaroidkidd/linux-setup/compare/v1.13.0...v1.14.0) (2020-01-22)
+
+
+### Features
+
+* removed postman & miniconda & updated .zshrc ([a07abac](https://github.com/polaroidkidd/linux-setup/commit/a07abaca07188aa73e25f2031f80de1148132fd5))
+
 ## [1.13.0](https://github.com/polaroidkidd/linux-setup/compare/v1.12.0...v1.13.0) (2020-01-11)
 
 
