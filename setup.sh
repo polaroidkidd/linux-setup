@@ -119,11 +119,6 @@ sudo apt install -y nextcloud-client
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
-
-# MiniCOnda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $WORK_PATH/miniconda.sh
-bash $WORK_PATH/miniconda.sh -b -p $HOME/miniconda
-
 # Spotify
 sudo apt -y install spotify-client
 
@@ -145,6 +140,7 @@ sudo apt install -y keepassx
 # Install Fonts
 unzip  $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
 cp -r $WORK_PATH/dot-files/polybar/fonts ${HOME}/.fonts
+
 # enable bitmap fonts
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
 sudo fc-cache -f -v
@@ -202,8 +198,6 @@ sudo apt update && sudo apt install -y google-cloud-sdk
 # sdk man
 curl -s "https://get.sdkman.io" | bash
 
-# postman (snap)
-sudo snap install postman
 
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt

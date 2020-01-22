@@ -68,7 +68,10 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,11 +109,14 @@ plugins=(
 )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities bitbucket.com github.com dae.cdk@ti8m.ch dae@ti8m.ch dle@ebikon pi@ebikon
+zstyle :omz:plugins:ssh-agent identities bitbucket.com github.com dae.cdk@ti8m.ch dae@ti8m.ch dle@ebikon pi@ebikon dae@ti8m
 zstyle :omz:plugins:ssh-agent lifetime
 
 
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
 
+source ~/.envs/.all.sh
 
 #####################################################
 ################ BEGIN  ALIAS #######################

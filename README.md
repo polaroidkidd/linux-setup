@@ -6,9 +6,7 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 
 * vs code
 * hub cli
-* miniconda
 * intellij idea ultimate (no licence included)
-* miniconda
 * terminator
 * firefox
 * google-chrome
@@ -19,7 +17,6 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 * docker
 * docker-compose
 * sdk-man
-* postman
 * google cloud cli
 * openvpn
 
