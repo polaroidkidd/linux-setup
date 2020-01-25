@@ -68,9 +68,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-)
+
 
 
 source $ZSH/oh-my-zsh.sh
@@ -189,6 +187,10 @@ alias gw='./gradlew'
 # copy pwd to clip board
 alias cpwd='pwd | xclip -sel clip'
 
+# ranger exit in directory
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+
 #####################################################
 ################ BEGIN  PATHS #######################
 #####################################################
@@ -209,24 +211,6 @@ source ~/.envs/digital-ocean
 #####################################################
 ################ BEGIN  PROGS #######################
 #####################################################
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dle/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/dle/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/dle/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/dle/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dle/.sdkman"
