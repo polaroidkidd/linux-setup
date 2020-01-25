@@ -1,6 +1,6 @@
 {
   "name": "linux-setup",
-  "version": "1.14.0",
+  "version": "1.15.0",
   "description": "Repo for dot-files and setup scripts for a fresh Ubuntu-Server installation",
   "main": "setup.sh",
   "scripts": {

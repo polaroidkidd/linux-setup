@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/polaroidkidd/linux-setup/compare/v1.14.0...v1.15.0) (2020-01-25)
+
+
+### Features
+
+* aliased ranger to remain in current dir when exiting ([bdd7d54](https://github.com/polaroidkidd/linux-setup/commit/bdd7d54c6af90670f82a60a9b5358b8c774426a2))
+
 ## [1.14.0](https://github.com/polaroidkidd/linux-setup/compare/v1.13.0...v1.14.0) (2020-01-22)
 
 
