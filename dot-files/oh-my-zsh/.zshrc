@@ -157,7 +157,6 @@ alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias uu="sudo apt update && sudo apt upgrade"
 alias rem="sudo apt autoremove -y"
-alias cu="conda update --all"
 alias usdn="uu -y && cu -y && sdn"
 
 alias begone="__begone && rem"
