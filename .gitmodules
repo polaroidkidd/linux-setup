@@ -7,3 +7,6 @@
 [submodule "i3-gaps"]
 	path = i3
 	url = https://www.github.com/Airblader/i3
+[submodule "nerd-fonts"]
+	path = nerd-fonts
+	url = git@github.com:ryanoasis/nerd-fonts.git

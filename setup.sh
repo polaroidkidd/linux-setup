@@ -13,7 +13,6 @@ git clone https://github.com/polaroidkidd/linux-setup.git
 
 # Init Submodules
 cd linux-setup
-git checkout feature/docker-and-docker-compose
 git submodule update --init --recursive
 
 # update permissions
@@ -197,6 +196,9 @@ sudo apt update && sudo apt install -y google-cloud-sdk
 
 # sdk man
 curl -s "https://get.sdkman.io" | bash
+
+# fonts
+sudo bash $WORK_PATH/nerd-fonts/install.sh
 
 
 # Space Theme

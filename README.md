@@ -19,6 +19,8 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 * sdk-man
 * google cloud cli
 * openvpn
+* nerd-fonts (all of them)
+* some basic .gitconfig rules
 
 ## PPAs
 

@@ -1,0 +1,6 @@
+[pull]
+	rebase = true
+[includeIf "gitdir:~/DevWork/me/"]
+  path = .gitconfig-me
+[includeIf "gitdir:~/DevWork/ti8m/"]
+  path = .gitconfig-ti8m

@@ -4,7 +4,7 @@
   inactive_color_offset = 1.0
   suppress_multiple_term_dialog = True
   tab_position = hidden
-  title_font = Input Mono Narrow Light Semi-Condensed 9
+  title_font = Fira Mono for Powerline 9
   title_hide_sizetext = True
   title_use_system_font = False
 [keybindings]
@@ -59,7 +59,7 @@
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#aaaaaa"
-    font = Monospace 11
+    font = Fira Mono for Powerline 11
     foreground_color = "#fcaf3e"
     icon_bell = False
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
@@ -72,7 +72,7 @@
     background_darkness = 0.95
     copy_on_selection = True
     cursor_color = "#e2e2e2"
-    font = Input Mono Narrow Light Semi-Condensed 11
+    font = Fira Mono for Powerline 11
     foreground_color = "#4bdeff"
     icon_bell = False
     palette = "#2f3142:#ef9d9d:#00cd00:#cdcd00:#20d6bc:#ad7fa8:#00cdcd:#faebd7:#2b2d41:#fc8e8e:#00ff00:#ffff00:#8fa9d1:#ca69ff:#00ffff:#ffffff"
@@ -84,6 +84,6 @@
   [[root]]
     background_color = "#070505"
     cursor_color = "#cca938"
-    font = Monospace 8
+    font = Fira Mono for Powerline 8
     foreground_color = "#cca938"
     use_system_font = False
