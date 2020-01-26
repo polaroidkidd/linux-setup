@@ -157,7 +157,7 @@ alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias uu="sudo apt update && sudo apt upgrade"
 alias rem="sudo apt autoremove -y"
-alias usdn="uu -y && cu -y && sdn"
+alias usdn="uu -y && sdn"
 
 alias begone="__begone && rem"
 function __begone {
