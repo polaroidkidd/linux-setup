@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/polaroidkidd/linux-setup/compare/v1.17.1...v1.18.0) (2020-01-27)
+
+
+### Features
+
+* added zsh autocompletion & syntax highlighting ([ab23a71](https://github.com/polaroidkidd/linux-setup/commit/ab23a71bb5930a6325121131a5ca40a830086191))
+
 ### [1.17.1](https://github.com/polaroidkidd/linux-setup/compare/v1.17.0...v1.17.1) (2020-01-26)
 
 
