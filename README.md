@@ -21,6 +21,8 @@ This setup script will install and configure i3-gaps with TryOne's Compton imple
 * openvpn
 * nerd-fonts (all of them)
 * some basic .gitconfig rules
+* ZSH Auto-Complete Suggestions
+* ZSH Syntax Highlighting
 
 ## PPAs
 
