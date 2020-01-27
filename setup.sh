@@ -179,7 +179,7 @@ sudo wget \
 # Network-Manager
 cd $WORK_PATH
 sudo apt install -y network-manager network-manager-config-connectivity-ubuntu network-manager-gnome
-sudo cp $WORK_PATH/network-manager/globally-managed-devices.conf /usr/lib/NetworkManager/conf.d/globally-managed-devices.conf
+sudo cp $WORK_PATH/network-manager/globally-managed-devices.conf /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
 sudo apt install -y network-manager-openvpn network-manager-openvpn-gnome
 
 # zsh
