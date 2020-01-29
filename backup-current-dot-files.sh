@@ -30,7 +30,6 @@ cp -r ~/.config/terminator $DOTFILE_PATH/
 # custom desktop entries
 rm -rf desktop-entries
 mkdir desktop-entries
-sudo cp ~/.local/share/applications/idea.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/whatsapp.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/telegram.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/plex.desktop ./desktop-entries/
