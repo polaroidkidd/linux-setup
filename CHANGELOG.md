@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/polaroidkidd/linux-setup/compare/v1.19.0...v1.20.0) (2020-01-29)
+
+
+### Features
+
+* updated polybar & copyq configs ([8ff230d](https://github.com/polaroidkidd/linux-setup/commit/8ff230d32c68dca36d8b4ca9cd1479a89be180f7))
+
 ## [1.19.0](https://github.com/polaroidkidd/linux-setup/compare/v1.18.1...v1.19.0) (2020-01-29)
 
 
