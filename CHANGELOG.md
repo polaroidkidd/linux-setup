@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/polaroidkidd/linux-setup/compare/v1.18.1...v1.19.0) (2020-01-29)
+
+
+### Features
+
+* removed wallpapers with bad polybar-visibillity ([4e6fa82](https://github.com/polaroidkidd/linux-setup/commit/4e6fa823e364e8ce4401b89a9bdd83019c491aaf))
+
 ### [1.18.1](https://github.com/polaroidkidd/linux-setup/compare/v1.18.0...v1.18.1) (2020-01-27)
 
 
