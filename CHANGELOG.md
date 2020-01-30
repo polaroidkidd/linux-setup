@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/polaroidkidd/linux-setup/compare/v1.20.0...v1.21.0) (2020-01-30)
+
+
+### Features
+
+* added audio control applet ([a319964](https://github.com/polaroidkidd/linux-setup/commit/a319964a40b0334487a0a6a434a816a5c5997023))
+
 ## [1.20.0](https://github.com/polaroidkidd/linux-setup/compare/v1.19.0...v1.20.0) (2020-01-29)
 
 
