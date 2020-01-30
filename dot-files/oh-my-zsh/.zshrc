@@ -111,7 +111,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch
 zstyle :omz:plugins:ssh-agent lifetime
 
-# bitbucket.com github.com dae.cdk@ti8m.ch dae@ti8m.ch dle@ebikon pi@ebikon dae@ti8m
 
 
 fpath=(~/.zsh/completion $fpath)

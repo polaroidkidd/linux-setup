@@ -95,7 +95,7 @@ sudo apt install -y feh
 sudo apt install -y apt-transport-https code
 
 # pulse audio
-sudo apt install -y pulseaudio pulseaudio-module-bluetooth pulseaudio-utils
+sudo apt install -y pulseaudio pulseaudio-module-bluetooth pulseaudio-utils pavucontrol pasystray
 
 # bluetooth
 sudo apt install -y blueman bluez bluez-obexd bluez-tools libbluetooth3
@@ -193,6 +193,9 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo apt install -y apt-transport-https ca-certificates gnupg
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt update && sudo apt install -y google-cloud-sdk
+
+# 
+
 
 # sdk man
 curl -s "https://get.sdkman.io" | bash
