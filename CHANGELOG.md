@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.22.0](https://github.com/polaroidkidd/linux-setup/compare/v1.21.0...v1.22.0) (2020-02-03)
+
+
+### Features
+
+* added netflix desktop file and global .gitconfig ([15ec59f](https://github.com/polaroidkidd/linux-setup/commit/15ec59f9d959264e548af6fd957aba9874e28f79))
+
 ## [1.21.0](https://github.com/polaroidkidd/linux-setup/compare/v1.20.0...v1.21.0) (2020-01-30)
 
 
