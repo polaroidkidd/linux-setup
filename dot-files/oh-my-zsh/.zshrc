@@ -97,6 +97,8 @@ ZSH_THEME="spaceship"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+DISABLE_MAGIC_FUNCTIONS=true 
+
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
  git
@@ -105,12 +107,12 @@ plugins=(
  zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch pi@ebikon
+zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch pi@ebikon dae@ti8m.laptop
 zstyle :omz:plugins:ssh-agent lifetime
 
+source $ZSH/oh-my-zsh.sh
 
 
 fpath=(~/.zsh/completion $fpath)
@@ -135,7 +137,7 @@ alias gp="git push"
 alias gpa="git push --all"
 alias gpt="git push --follow-tags"
 alias gip="git pull --verbose"
-
+alias gbdo="git push --delete origin"
 
 # function to commit and push all with a message in format of: gcp example text [ENTER TO SEND]
 function __gcp() {
@@ -165,6 +167,10 @@ function __begone {
 
 # Docker & Docker-Compose alias
 alias dc="docker-compose"
+function __dcrm {
+  dc stop ${1} && echo "y" | dc rm ${1}
+}
+alias dcrm="__drm"
 alias dwipe='echo "y" | docker system prune -a'
 alias dwipev='echo "y" | docker volume prune'
 
@@ -202,6 +208,8 @@ export PATH="$PATH:/snap/bin"
 # work aliases
 source ~/.aliases/ti8m
 
+# local path
+export PATH="$PATH:/home/dle/.local/bin"
 
 #####################################################
 ################ BEGIN  ENVS  #######################

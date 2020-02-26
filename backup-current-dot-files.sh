@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # get the path to this script
 MY_PATH=`dirname "$0"`
@@ -33,6 +33,7 @@ mkdir desktop-entries
 sudo cp ~/.local/share/applications/whatsapp.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/telegram.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/plex.desktop ./desktop-entries/
+sudo cp ~/.local/share/applications/spotify.desktop ./desktop-entries/
 
 # oh-my-zsh
 mkdir -p $DOTFILE_PATH/oh-my-zsh
