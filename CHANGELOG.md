@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.23.3](https://github.com/polaroidkidd/linux-setup/compare/v1.23.2...v1.23.3) (2020-03-04)
+
+
+### Bug Fixes
+
+* typo for globally-managed-devices ([87058a9](https://github.com/polaroidkidd/linux-setup/commit/87058a9b68f5811d1edb5e4f19ee38264e9fa031))
+
 ### [1.23.2](https://github.com/polaroidkidd/linux-setup/compare/v1.23.1...v1.23.2) (2020-03-04)
 
 
