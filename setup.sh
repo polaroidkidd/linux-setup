@@ -26,10 +26,10 @@ WORK_PATH=`( cd "$WORK_PATH" && pwd )`
 
 
 # i3 & i3-gaps
-sudo apt install -y xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake 
+sudo apt install -y xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
 
 cd $WORK_PATH/xcb-util-xrm
-git submodule update --init --recursive 
+git submodule update --init --recursive
 ./autogen.sh --prefix=/usr
 sudo make install
 
@@ -56,9 +56,9 @@ sudo make install
 mkdir -p $WORK_PATH/light
 cd $WORK_PATH/light
 wget https://github.com/haikarainen/light/releases/download/v1.2/light-1.2.tar.gz
-tar xf light-1.2.tar.gz 
-cd light-1.2 
-./configure 
+tar xf light-1.2.tar.gz
+cd light-1.2
+./configure
 make
 sudo make install
 
@@ -85,7 +85,7 @@ sudo cp $WORK_PATH/dot-files/intel/20-intel.conf /usr/share/X11/xorg.conf.d/20-i
 cp $WORK_PATH/dot-files/oh-my-zsh/.zshrc ~/.zshrc
 
 # polybar
-sudo apt install -y polybar 
+sudo apt install -y polybar
 
 
 # wallpaper
@@ -141,7 +141,10 @@ unzip  $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
 cp -r $WORK_PATH/dot-files/polybar/fonts ${HOME}/.fonts
 
 # enable bitmap fonts
-sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
+FILE=/etc/fonts/conf.d/70-no-bitmaps.conf
+if test -f "$FILE"; then
+  sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
+fi
 sudo fc-cache -f -v
 
 
@@ -217,7 +220,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # CleanUp
 cd ~/
-sudo rm -rf ~/temporary-linux-setupsudo 
+sudo rm -rf ~/temporary-linux-setupsudo
 
 # Complete
 echo "Installation Completed! Rebooting in 10"
