@@ -9,4 +9,4 @@
 	url = https://www.github.com/Airblader/i3
 [submodule "nerd-fonts"]
 	path = nerd-fonts
-	url = git@github.com:ryanoasis/nerd-fonts.git
+	url = https://www.github.com/ryanoasis/nerd-fonts.git
