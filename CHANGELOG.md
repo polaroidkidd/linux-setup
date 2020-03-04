@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.23.5](https://github.com/polaroidkidd/linux-setup/compare/v1.23.4...v1.23.5) (2020-03-04)
+
+
+### Bug Fixes
+
+* cd into workpath before installing fonts ([e122e5e](https://github.com/polaroidkidd/linux-setup/commit/e122e5eb7981f33d1620de0493f39df5bdce694b))
+
 ### [1.23.4](https://github.com/polaroidkidd/linux-setup/compare/v1.23.3...v1.23.4) (2020-03-04)
 
 
