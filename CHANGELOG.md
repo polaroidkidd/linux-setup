@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://github.com/polaroidkidd/linux-setup/compare/v1.23.5...v1.24.0) (2020-03-09)
+
+
+### Features
+
+* docker0 network excluded from network-manager ([7b80bbe](https://github.com/polaroidkidd/linux-setup/commit/7b80bbe8a5b044f0e2726953cc0ed056417562df))
+
 ### [1.23.5](https://github.com/polaroidkidd/linux-setup/compare/v1.23.4...v1.23.5) (2020-03-04)
 
 
