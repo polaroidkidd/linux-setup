@@ -69,7 +69,6 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -97,23 +96,21 @@ ZSH_THEME="spaceship"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-DISABLE_MAGIC_FUNCTIONS=true 
+DISABLE_MAGIC_FUNCTIONS=true
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
- git
- ssh-agent
- zsh-syntax-highlighting
- zsh-autosuggestions
-)
-
+  git
+  ssh-agent
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+ )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch pi@ebikon dae@ti8m.laptop
 zstyle :omz:plugins:ssh-agent lifetime
 
 source $ZSH/oh-my-zsh.sh
-
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -123,7 +120,6 @@ source ~/.envs/.all.sh
 #####################################################
 ################ BEGIN  ALIAS #######################
 #####################################################
-
 
 # Useful Git Commands
 alias gl="git log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%aN %Creset%s' --date=iso --graph --branches"
@@ -160,31 +156,40 @@ alias rem="sudo apt autoremove -y"
 alias usdn="uu -y && sdn"
 
 alias begone="__begone && rem"
-function __begone {
-	sudo apt-get purge "$1"
+function __begone() {
+  sudo apt-get purge "$1"
 }
-
 
 # Docker & Docker-Compose alias
 alias dc="docker-compose"
-function __dcrm {
-  dc stop ${1} && echo "y" | dc rm ${1}
+function __drm() {
+  dc stop ${1}
+  wait
+  echo "y" | dc rm ${1}
+  echo "y" | docker system prune -a
 }
-alias dcrm="__drm"
-alias dwipe='echo "y" | docker system prune -a'
+alias dcwipe="__dcwipe"
+
+function __dwipe() {
+  docker stop `docker ps -aq`
+  wait
+  echo "y" | docker system prune -a
+}
+alias dcwipe='__dcwipe'
+alias dwipe='__dwipe'
 alias dwipev='echo "y" | docker volume prune'
 
 # NVM
 export NVM_DIR="/home/dle/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Yarn
-alias node=nodejs
-
+# alias node=nodejs
 
 # MPV Alias to watch a video with mpv but detatch the process
-function __mpvq {
-	mpv --really-quiet "$1" & disown
+function __mpvq() {
+  mpv --really-quiet "$1" &
+  disown
 }
 alias mpvq='__mpvq'
 
@@ -197,7 +202,6 @@ alias cpwd='pwd | xclip -sel clip'
 # ranger exit in directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-
 #####################################################
 ################ BEGIN  PATHS #######################
 #####################################################
@@ -206,7 +210,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 export PATH="$PATH:/snap/bin"
 
 # work aliases
-source ~/.aliases/ti8m
+source ~/.aliases/.ti8m.sh
 
 # local path
 export PATH="$PATH:/home/dle/.local/bin"
@@ -215,8 +219,6 @@ export PATH="$PATH:/home/dle/.local/bin"
 ################ BEGIN  ENVS  #######################
 #####################################################
 source ~/.envs/.all.sh
-
-
 #####################################################
 ################ BEGIN  PROGS #######################
 #####################################################
