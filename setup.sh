@@ -219,6 +219,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # ZSH Syntax Highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+
+# handle emojis (disabled)
+echo "run_im xim" > ~/.xinputrc 
+
 # CleanUp
 cd ~/
 sudo rm -rf ~/temporary-linux-setupsudo

@@ -163,12 +163,19 @@ function __begone() {
 # Docker & Docker-Compose alias
 alias dc="docker-compose"
 function __drm() {
-  dc stop ${1}
+  docker-compose stop ${1}
   wait
   echo "y" | dc rm ${1}
-  echo "y" | docker system prune -a
+ 
 }
-alias dcwipe="__dcwipe"
+
+function __dcwipe(){
+  if ! [[ -z `docker-compose stop | grep 'ERRPR'` ]] ; then
+    echo "y" | docker-compose rm
+    wait
+    echo "y" | docker system prune -a
+  fi
+}
 
 function __dwipe() {
   docker stop `docker ps -aq`
@@ -209,8 +216,6 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 # SNAP
 export PATH="$PATH:/snap/bin"
 
-# work aliases
-source ~/.aliases/.ti8m.sh
 
 # local path
 export PATH="$PATH:/home/dle/.local/bin"
@@ -218,7 +223,9 @@ export PATH="$PATH:/home/dle/.local/bin"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
-source ~/.envs/.all.sh
+
+
+
 #####################################################
 ################ BEGIN  PROGS #######################
 #####################################################
