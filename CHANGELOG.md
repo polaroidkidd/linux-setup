@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.25.0](https://github.com/polaroidkidd/linux-setup/compare/v1.24.1...v1.25.0) (2020-03-20)
+
+
+### Features
+
+* included separate install for nvidia-powered laptops ([40a526c](https://github.com/polaroidkidd/linux-setup/commit/40a526cf4a3f02a6b503abd3695a3815ef7213aa))
+
 ### [1.24.1](https://github.com/polaroidkidd/linux-setup/compare/v1.24.0...v1.24.1) (2020-03-20)
 
 
