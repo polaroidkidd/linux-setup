@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.24.1](https://github.com/polaroidkidd/linux-setup/compare/v1.24.0...v1.24.1) (2020-03-20)
+
+
+### Bug Fixes
+
+* explorer window vs-code works ([d9ab9db](https://github.com/polaroidkidd/linux-setup/commit/d9ab9db2395068e5e4abe4a6ce3ad9a01a42c078))
+
 ## [1.24.0](https://github.com/polaroidkidd/linux-setup/compare/v1.23.5...v1.24.0) (2020-03-09)
 
 
