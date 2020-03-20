@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.26.1](https://github.com/polaroidkidd/linux-setup/compare/v1.26.0...v1.26.1) (2020-03-20)
+
+
+### Bug Fixes
+
+* added GTK_IM_MODULE='xim' to `~/.zshrc` ([31f6415](https://github.com/polaroidkidd/linux-setup/commit/31f64159e0ff069a59f1a07583e92753776716c6))
+
 ## [1.26.0](https://github.com/polaroidkidd/linux-setup/compare/v1.25.0...v1.26.0) (2020-03-20)
 
 
