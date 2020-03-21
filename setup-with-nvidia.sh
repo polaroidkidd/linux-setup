@@ -223,6 +223,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # handle emojis (disabled)
 echo "run_im xim" > ~/.xinputrc 
 
+# launch code with support for `ctrl+shift+e`
+sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.desktop 
+
 # Launch Lambda Install Script
 LAMBDA_REPO=$(mktemp) && \
 wget -O${LAMBDA_REPO} https://lambdalabs.com/static/misc/lambda-stack-repo.deb && \

@@ -107,13 +107,19 @@ plugins=(
  )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch pi@ebikon dae@ti8m.laptop
+zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch pi@ebikon dae@ti8m.laptop dle@aero
 zstyle :omz:plugins:ssh-agent lifetime
 
 source $ZSH/oh-my-zsh.sh
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+
+zstyle -s ':completion:*:hosts' hosts _ssh_config
+[[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))
+zstyle ':completion:*:hosts' hosts $_ssh_config
+
+source <(doctl completion zsh)
 
 source ~/.envs/.all.sh
 
@@ -216,6 +222,8 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 # SNAP
 export PATH="$PATH:/snap/bin"
 
+# work aliases
+source ~/.aliases/.ti8m.sh
 
 # local path
 export PATH="$PATH:/home/dle/.local/bin"
@@ -223,9 +231,8 @@ export PATH="$PATH:/home/dle/.local/bin"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
-
+source ~/.envs/.all.sh
 export GTK_IM_MODULE="xim"
-
 
 #####################################################
 ################ BEGIN  PROGS #######################
