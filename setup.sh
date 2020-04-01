@@ -207,7 +207,7 @@ cd $WORK_PATH
 sudo bash $WORK_PATH/nerd-fonts/install.sh
 
 # thunar
-sudo apt install thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
+sudo apt install -y thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
 
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt

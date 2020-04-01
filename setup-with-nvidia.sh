@@ -119,10 +119,10 @@ sudo apt install -y nextcloud-client
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
 # Spotify
-sudo apt -y install spotify-client
+sudo apt install -y spotify-client
 
 # github cli
-sudo snap install hub --classic
+sudo snap install -y hub --classic
 
 
 # google chrome
@@ -207,7 +207,7 @@ cd $WORK_PATH
 sudo bash $WORK_PATH/nerd-fonts/install.sh
 
 # thunar
-sudo apt install thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
+sudo apt install -y thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
 
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt
@@ -237,7 +237,7 @@ sudo apt-get install --yes --no-install-recommends nvidia-headless-390 nvidia-ut
 sudo apt-get install --yes --no-install-recommends lambda-stack-cuda
 
 # Install additional packages
-sudo apt install -y nvidia-compute-utils-435 nvidia-dkms-435 nvidia-driver-435 nvidia-kernel-common-435 nvidia-kernel-source-435 nvidia-mod nvidia-pri nvidia-set nvidia-utils-435 xserver-xorg-video-nvidia-435    
+sudo apt install -y nvidia-compute-utils-435 nvidia-dkms-435 nvidia-driver-435 nvidia-kernel-common-435 nvidia-kernel-source-435 nvidia-modprobe nvidia-prime nvidia-setttings nvidia-utils-435 xserver-xorg-video-nvidia-435
 cp $WORK_PATH/X11/xorg.conf /etc/X11/xorg.conf
 
 # CleanUp
