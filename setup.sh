@@ -203,8 +203,8 @@ sudo apt update && sudo apt install -y google-cloud-sdk
 curl -s "https://get.sdkman.io" | bash
 
 # fonts
-cd $WORK_PATH
-sudo bash $WORK_PATH/nerd-fonts/install.sh
+# cd $WORK_PATH
+# sudo bash $WORK_PATH/nerd-fonts/install.sh
 
 # thunar
 sudo apt install -y thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
