@@ -13,14 +13,13 @@ echo $DOTFILE_PATH
 rm -rf $DOTFILE_PATH
 mkdir $DOTFILE_PATH
 
-mkdir -p $DOTFILE_PATH/rofi
 mkdir -p $DOTFILE_PATH/i3
 mkdir -p $DOTFILE_PATH/fusuma
 mkdir -p $DOTFILE_PATH/polybar
 mkdir -p $DOTFILE_PATH/terminator
 
 cp ~/.config/i3/config $DOTFILE_PATH/i3/
-cp ~/.config/rofi/rofi.sh $DOTFILE_PATH/rofi/rofi.sh
+cp -r ~/.config/rofi $DOTFILE_PATH/
 cp ~/.config/fusuma/config.yml $DOTFILE_PATH/fusuma/
 cp ~/.config/compton.conf $DOTFILE_PATH
 cp -r ~/.config/copyq $DOTFILE_PATH/

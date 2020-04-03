@@ -25,7 +25,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 # Start Rofi
 # bindsym $mod+Tab exec "rofi -combi-modi window,drun -show combi -modi combi"
-bindsym $mod+Tab exec ~/.config/rofi/rofi.sh
+bindsym $mod+Tab exec /home/dle/.config/rofi/launchers-git/launcher.sh
 # change focus
 bindsym $mod+j focus left
 # bindsym $mod+k focus down

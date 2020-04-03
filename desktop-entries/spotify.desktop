@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Spotify
-Icon=display
+Icon=/home/dle/.icons/FlatWoken/scalable/apps/spotify.svg
 Exec=/usr/bin/spotify
 Terminal=false
 Type=Application
