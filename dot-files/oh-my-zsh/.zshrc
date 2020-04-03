@@ -96,7 +96,7 @@ ZSH_THEME="spaceship"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
@@ -106,8 +106,22 @@ plugins=(
   zsh-autosuggestions
  )
 
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@ebikon dle@github.com dle@bitbucket.org dae@ti8m.ch pi@ebikon dae@ti8m.laptop dle@aero
+zstyle :omz:plugins:ssh-agent identities dle@github.com dae@gitlab.ti8m.ch pi@ebikon dle.xps@aero
 zstyle :omz:plugins:ssh-agent lifetime
 
 source $ZSH/oh-my-zsh.sh
@@ -118,10 +132,6 @@ autoload -Uz compinit && compinit -i
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))
 zstyle ':completion:*:hosts' hosts $_ssh_config
-
-source <(doctl completion zsh)
-
-source ~/.envs/.all.sh
 
 #####################################################
 ################ BEGIN  ALIAS #######################
@@ -223,7 +233,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 export PATH="$PATH:/snap/bin"
 
 # work aliases
-source ~/.aliases/.ti8m.sh
+# source ~/.aliases/.ti8m.sh
 
 # local path
 export PATH="$PATH:/home/dle/.local/bin"
@@ -231,12 +241,17 @@ export PATH="$PATH:/home/dle/.local/bin"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
-source ~/.envs/.all.sh
+# source ~/.envs/.all.sh
 export GTK_IM_MODULE="xim"
 
 #####################################################
 ################ BEGIN  PROGS #######################
 #####################################################
+
+export PATH="$PATH:`yarn global bin`"
+
+
+source <(doctl completion zsh)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dle/.sdkman"
