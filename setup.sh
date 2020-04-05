@@ -21,9 +21,8 @@ sudo chmod -R a+rw linux-setup
 cd linux-setup
 
 # get the path to this script
-WORK_PATH=`dirname "$0"`
-WORK_PATH=`( cd "$WORK_PATH" && pwd )`
-
+WORK_PATH=$(dirname "$0")
+WORK_PATH=$( (cd "$WORK_PATH" && pwd))
 
 # i3 & i3-gaps
 sudo apt install -y xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
@@ -62,14 +61,33 @@ cd light-1.2
 make
 sudo make install
 
-
 # Fusuma
 sudo gpasswd -a $USER input
 sudo apt install -y libinput-tools ruby
 sudo gem install fusuma
 
-# Etra Tools
-sudo apt install -y rofi ranger terminator
+# Extra Tools
+sudo apt install -y ranger terminator
+
+# rofi
+sudo apt remove meson # not needed because we're using the latest python implementation
+sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build librsvg2-dev libjpeg-dev flex bison check libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev libglib2.0-dev libstartup-notification0-dev libxkbcommon-dev libxcb1-dev doxygen doxygen uncrustify cppcheck ohcount
+pip3 install --user meson
+cd $WORK_PATH/rofi
+git submodule update --init
+meson setup build
+ninja -C build
+sudo ninja -C build install
+cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
+
+# plymouth
+cd $WORK_PATH/plymouth-themes
+sudo apt install -y plymouth-themes
+sudo cp -r pack_2/dark_planet /usr/share/plymouth/themes
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dark_planet 100
+echo "0" | sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u
+cd $WORK_PATH
 
 # Copy dot-files
 mkdir -p ~/.config/
@@ -81,12 +99,10 @@ cp -r $WORK_PATH/desktop-entries/* ~/.local/share/applications/
 sudo mkdir -p /usr/share/X11/xorg.conf.d/
 sudo cp $WORK_PATH/dot-files/intel/20-intel.conf /usr/share/X11/xorg.conf.d/20-intel.conf
 
-
 cp $WORK_PATH/dot-files/oh-my-zsh/.zshrc ~/.zshrc
 
 # polybar
 sudo apt install -y polybar
-
 
 # wallpaper
 sudo apt install -y feh
@@ -114,7 +130,6 @@ tar xzvf ideaIU-2019.3.1.tar.gz -C ~/DevTools/IntelliJ
 # nextcloud
 sudo apt install -y nextcloud-client
 
-
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
@@ -123,7 +138,6 @@ sudo apt -y install spotify-client
 
 # github cli
 sudo snap install hub --classic
-
 
 # google chrome
 cd $WORK_PATH
@@ -137,7 +151,7 @@ sudo apt install -y copyq
 sudo apt install -y keepassx
 
 # Install Fonts
-unzip  $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
+unzip $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
 cp -r $WORK_PATH/dot-files/polybar/fonts ${HOME}/.fonts
 
 # enable bitmap fonts
@@ -147,42 +161,50 @@ if test -f "$FILE"; then
 fi
 sudo fc-cache -f -v
 
-
 # Docker
-sudo apt remove --yes docker docker-engine docker.io \
-    && sudo apt update \
-    && sudo apt --yes --no-install-recommends install \
-        apt-transport-https \
-        ca-certificates \
-    && wget --quiet --output-document=- https://download.docker.com/linux/ubuntu/gpg \
-        | sudo apt-key add - \
-    && sudo add-apt-repository \
-        "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu \
+sudo apt remove --yes docker docker-engine docker.io &&
+  sudo apt update &&
+  sudo apt --yes --no-install-recommends install \
+    apt-transport-https \
+    ca-certificates &&
+  wget --quiet --output-document=- https://download.docker.com/linux/ubuntu/gpg |
+  sudo apt-key add - &&
+  sudo add-apt-repository \
+    "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu \
         $(lsb_release --codename --short) \
-        stable" \
-    && sudo apt update \
-    && sudo apt --yes --no-install-recommends install docker-ce \
-    && sudo usermod --append --groups docker "$USER" \
-    && sudo systemctl enable docker \
-    && printf '\nDocker installed successfully\n\n'
+        stable" &&
+  sudo apt update &&
+  sudo apt --yes --no-install-recommends install docker-ce &&
+  sudo usermod --append --groups docker "$USER" &&
+  sudo systemctl enable docker &&
+  printf '\nDocker installed successfully\n\n'
 
 printf 'Waiting for Docker to start...\n\n'
 sleep 3
 
 # Docker Compose
 sudo wget \
-        --output-document=/usr/local/bin/docker-compose \
-        https://github.com/docker/compose/releases/download/1.25.0/run.sh \
-    && sudo chmod +x /usr/local/bin/docker-compose \
-    && sudo wget \
-        --output-document=/etc/bash_completion.d/docker-compose \
-        "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose" \
-    && printf '\nDocker Compose installed successfully\n\n'
+  --output-document=/usr/local/bin/docker-compose \
+  https://github.com/docker/compose/releases/download/1.25.0/run.sh &&
+  sudo chmod +x /usr/local/bin/docker-compose &&
+  sudo wget \
+    --output-document=/etc/bash_completion.d/docker-compose \
+    "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose" &&
+  printf '\nDocker Compose installed successfully\n\n'
 
 # Network-Manager
 cd $WORK_PATH
 sudo apt install -y network-manager network-manager-config-connectivity-ubuntu network-manager-gnome
-sudo cp $WORK_PATH/network-manager/10-globally-managed-devices.conf /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
+if [[ -f /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf ]]; then
+  sudo rm /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
+fi
+
+if [[ -f /etc/network/interfaces ]]; then
+  sudo rm /etc/network/interfaces
+fi
+sudo cp $WORK_PATH/network-manager/interfaces /etc/network/interfaces
+sudo touch /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
+sudo cp $WORK_PATH/network-manager/01-netcfg.yaml /etc/netplan/01-netcfg.yaml
 sudo apt install -y network-manager-openvpn network-manager-openvpn-gnome
 
 # zsh
@@ -196,8 +218,6 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo apt install -y apt-transport-https ca-certificates gnupg
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt update && sudo apt install -y google-cloud-sdk
-
-
 
 # sdk man
 curl -s "https://get.sdkman.io" | bash
@@ -220,10 +240,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # handle emojis (disabled)
-echo "run_im xim" > ~/.xinputrc 
+echo "run_im xim" >~/.xinputrc
 
 # launch code with support for `ctrl+shift+e`
-sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.desktop 
+sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.desktop
 
 # CleanUp
 cd ~/
