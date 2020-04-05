@@ -69,7 +69,27 @@ sudo apt install -y libinput-tools ruby
 sudo gem install fusuma
 
 # Etra Tools
-sudo apt install -y rofi ranger terminator
+sudo apt install -y ranger terminator
+
+# rofi
+sudo apt remove meson # not needed because we're using the latest python implementation
+sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build librsvg2-dev libjpeg-dev flex bison check libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev libglib2.0-dev libstartup-notification0-dev libxkbcommon-dev libxcb1-dev doxygen doxygen uncrustify cppcheck ohcount
+pip3 install --user meson
+cd $WORK_PATH/rofi
+git submodule update --init
+meson setup build
+ninja -C build
+sudo ninja -C build install
+cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
+
+# plymouth
+cd $WORK_PATH/plymouth-themes
+sudo apt install -y plymouth-themes
+sudo cp -r pack_2/dark_planet /usr/share/plymouth/themes
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dark_planet 100
+echo "0" | sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u
+cd $WORK_PATH
 
 # Copy dot-files
 mkdir -p ~/.config/
