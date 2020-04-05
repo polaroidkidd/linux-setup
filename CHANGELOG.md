@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.28.0](https://github.com/polaroidkidd/linux-setup/compare/v1.27.2...v1.28.0) (2020-04-05)
+
+
+### Features
+
+* building rofi from source for riced rofi ([8b0f2c6](https://github.com/polaroidkidd/linux-setup/commit/8b0f2c6834425cbadb70354fdacca777bdf52560))
+
 ### [1.27.2](https://github.com/polaroidkidd/linux-setup/compare/v1.27.1...v1.27.2) (2020-04-03)
 
 
