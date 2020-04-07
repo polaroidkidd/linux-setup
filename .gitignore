@@ -1,2 +1,5 @@
 node_modules
 dot-files/copyq/copyq_tab_*.idea
+**/copyq*.ini
+**/copyq*.bat
+**/copyq*.dat

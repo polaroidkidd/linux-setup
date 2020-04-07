@@ -97,6 +97,11 @@ cp -r $WORK_PATH/dot-files/* ~/.config/
 mkdir -p ~/.local/share/applications/
 cp -r $WORK_PATH/desktop-entries/* ~/.local/share/applications/
 
+# icons
+cp -r $WORK_PATH/dot-files/.icons ~/.icons
+
+
+
 # Copy Intel Driver
 sudo mkdir -p /usr/share/X11/xorg.conf.d/
 sudo cp $WORK_PATH/dot-files/intel/20-intel.conf /usr/share/X11/xorg.conf.d/20-intel.conf
