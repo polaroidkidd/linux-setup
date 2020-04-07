@@ -80,6 +80,10 @@ ninja -C build
 sudo ninja -C build install
 cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 
+# icons
+cp -r $WORK_PATH/dot-files/.icons ~/.icons
+
+
 # plymouth
 cd $WORK_PATH/plymouth-themes
 sudo apt install -y plymouth-themes

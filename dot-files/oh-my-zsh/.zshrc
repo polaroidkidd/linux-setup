@@ -121,7 +121,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@github.com dae@gitlab.ti8m.ch pi@ebikon dle.xps@aero
+zstyle :omz:plugins:ssh-agent identities dle@github.com dae@gitlab.ti8m.ch pi@ebikon dle.xps@aero dle.xps@pi
 zstyle :omz:plugins:ssh-agent lifetime
 
 source $ZSH/oh-my-zsh.sh
@@ -232,8 +232,6 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 # SNAP
 export PATH="$PATH:/snap/bin"
 
-# work aliases
-# source ~/.aliases/.ti8m.sh
 
 # local path
 export PATH="$PATH:/home/dle/.local/bin"
@@ -241,7 +239,13 @@ export PATH="$PATH:/home/dle/.local/bin"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
-# source ~/.envs/.all.sh
+
+
+source /home/dle/.envs/.cloud.env
+source /home/dle/.envs/.deluge.env
+source /home/dle/.envs/.doctl.env
+source /home/dle/.envs/.vps-redicrect.env
+
 export GTK_IM_MODULE="xim"
 
 #####################################################
