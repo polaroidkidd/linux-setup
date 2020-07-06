@@ -81,7 +81,8 @@ sudo ninja -C build install
 cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 
 # icons
-cp -r $WORK_PATH/dot-files/.icons ~/.icons
+cp -r $WORK_PATH/FlatWoken/FlatWoken ~/.icons
+cp -r $WORK_PATH/FlatWoken/FlatWokenMin ~/.icons
 
 
 # plymouth
@@ -99,9 +100,13 @@ cp -r $WORK_PATH/dot-files/* ~/.config/
 mkdir -p ~/.local/share/applications/
 cp -r $WORK_PATH/desktop-entries/* ~/.local/share/applications/
 
-# Copy Intel Driver
+# Install Intel/DisplayPort Driver
 sudo mkdir -p /usr/share/X11/xorg.conf.d/
 sudo cp $WORK_PATH/dot-files/intel/20-intel.conf /usr/share/X11/xorg.conf.d/20-intel.conf
+sudo cp $WORK_PATH/DisplayDriver/20-evdidevice.conf /usr/share/X11/xorg.conf.d/20-evdidevice.conf
+cd $WORK_PATH/DisplayDriver/
+sudo chmod +x ./displaylink-driver-5.3.1.34.run
+sudo ./displaylink-driver-5.3.1.34.run
 
 cp $WORK_PATH/dot-files/oh-my-zsh/.zshrc ~/.zshrc
 
