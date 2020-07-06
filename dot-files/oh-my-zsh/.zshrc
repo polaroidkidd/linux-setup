@@ -121,7 +121,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@github.com dae@gitlab.ti8m.ch pi@ebikon dle.xps@aero dle.xps@pi
+zstyle :omz:plugins:ssh-agent identities dle@github.com dae@gitlab.ti8m.ch pi@ebikon dle.xps@aero dle.xps@bitbucket.org
 zstyle :omz:plugins:ssh-agent lifetime
 
 source $ZSH/oh-my-zsh.sh
@@ -150,6 +150,7 @@ alias gpa="git push --all"
 alias gpt="git push --follow-tags"
 alias gip="git pull --verbose"
 alias gbdo="git push --delete origin"
+
 
 # function to commit and push all with a message in format of: gcp example text [ENTER TO SEND]
 function __gcp() {
@@ -198,9 +199,51 @@ function __dwipe() {
   wait
   echo "y" | docker system prune -a
 }
+
+
+function __dprune() {
+  echo "y" | docker system prune -a
+  wait
+  echo "y" | docker volume prune
+  wait
+  echo "y" | docker network prune -a
+
+}
+
+
 alias dcwipe='__dcwipe'
 alias dwipe='__dwipe'
-alias dwipev='echo "y" | docker volume prune'
+alias dprune='__dprune'
+
+
+# ranger exit in directory
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+
+function __tns(){
+  tmux new-session -t ${1}
+}
+
+function __tks(){
+  tmux kill-session -t ${1}
+}
+
+function __tas(){
+  tmux attach-session -t ${1}
+}
+
+function __tkill(){
+  tmux kill-server
+}
+
+
+# tmux aliases
+alias tns="__tns"
+alias tks="__tks"
+alias tas="__tas"
+alias tkill="__tkill"
+
+
 
 # NVM
 export NVM_DIR="/home/dle/.nvm"
@@ -232,6 +275,8 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 # SNAP
 export PATH="$PATH:/snap/bin"
 
+# work aliases
+# source ~/.aliases/.ti8m.sh
 
 # local path
 export PATH="$PATH:/home/dle/.local/bin"
@@ -239,21 +284,18 @@ export PATH="$PATH:/home/dle/.local/bin"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
-
-
-source /home/dle/.envs/.cloud.env
-source /home/dle/.envs/.deluge.env
-source /home/dle/.envs/.doctl.env
-source /home/dle/.envs/.vps-redicrect.env
-
-export GTK_IM_MODULE="xim"
+# source ~/.envs/.all.sh
+#  export GTK_IM_MODULE="xim"
 
 #####################################################
 ################ BEGIN  PROGS #######################
 #####################################################
 
+# Use global yarn packages from cli
 export PATH="$PATH:`yarn global bin`"
 
+# Use Android cli
+export PATH="/home/dle/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 
 source <(doctl completion zsh)
 

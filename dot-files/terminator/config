@@ -55,12 +55,12 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.8
+    background_darkness = 0.9
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#aaaaaa"
-    font = Fira Mono for Powerline 11
-    foreground_color = "#fcaf3e"
+    font = FiraMono Nerd Font Mono Medium 11
+    foreground_color = "#eeeeec"
     icon_bell = False
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     scrollback_infinite = True

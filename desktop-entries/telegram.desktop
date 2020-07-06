@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Telegram
-GenericName=Chat
-Icon=/home/dle/.icons/FlatWoken/scalable/apps/telegram.svg
-Exec=brave-browser --app=https://web.telegram.org
-Terminal=false
-Type=Application
-Categories=Chat;
-StartupNotify=true

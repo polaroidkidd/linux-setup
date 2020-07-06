@@ -13,3 +13,6 @@
 [submodule "plymouth-themes"]
 	path = plymouth-themes
 	url = https://github.com/adi1090x/plymouth-themes.git
+[submodule "FlatWoken"]
+	path = FlatWoken
+	url = https://github.com/alecive/FlatWoken.git

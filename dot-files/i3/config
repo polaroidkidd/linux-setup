@@ -54,8 +54,8 @@ workspace_auto_back_and_forth no
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+h split h
+bindsym $mod+v split v
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -378,3 +378,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+
+# battery notification
+exec --no-startup-id /home/dle/DevTools/i3-battery-popup/i3-battery-popup -n -L 15
+ 
+#  bindsym ISO_Level3_Shift + Control_R /home/dle/.config/i3/altmod.sh
