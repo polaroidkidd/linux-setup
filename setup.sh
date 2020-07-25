@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-
+set -x
 # Update Packages
 sudo apt update
 
@@ -257,7 +257,7 @@ sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.des
 # CleanUp
 cd ~/
 sudo rm -rf ~/temporary-linux-setup
-
+set +x
 # Complete
 echo "Installation Completed! Rebooting in 10"
 sleep 10
