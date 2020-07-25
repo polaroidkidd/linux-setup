@@ -75,7 +75,7 @@ sudo apt install -y ranger terminator
 # rofi
 sudo apt -y remove meson # not needed because we're using the latest python implementation
 sudo apt-get -y install python3 python3-pip python3-setuptools python3-wheel ninja-build librsvg2-dev libjpeg-dev flex bison check libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev libglib2.0-dev libstartup-notification0-dev libxkbcommon-dev libxcb1-dev doxygen doxygen uncrustify cppcheck ohcount ronn
-pip3 install --user meson==0.54
+sudo pip3 install meson==0.54
 cd $WORK_PATH/rofi
 git submodule update --init
 ~/.local/bin/meson setup build
