@@ -5,12 +5,11 @@ set -e
 sudo apt update
 
 # Do all work in the tmp directory
-mkdir ~/temporary-linux-setup
-cd ~/temporary-linux-setup
-
 # Clone this repository
 TEMP_WORK_DIR=~/temporary-linux-setup/linux-setup
 if [ ! -d "$TEMP_WORK_DIR" ]; then
+  mkdir ~/temporary-linux-setup
+  cd ~/temporary-linux-setup
   git clone https://github.com/polaroidkidd/linux-setup.git
 fi
 # Init Submodules
@@ -256,7 +255,7 @@ sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.des
 
 # CleanUp
 cd ~/
-sudo rm -rf ~/temporary-linux-setupsudo
+sudo rm -rf ~/temporary-linux-setup
 
 # Complete
 echo "Installation Completed! Rebooting in 10"
