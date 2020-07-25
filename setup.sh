@@ -9,8 +9,10 @@ mkdir ~/temporary-linux-setup
 cd ~/temporary-linux-setup
 
 # Clone this repository
-git clone https://github.com/polaroidkidd/linux-setup.git
-
+TEMP_WORK_DIR=~/temporary-linux-setup/linux-setup
+if [ ! -d "$TEMP_WORK_DIR" ]; then
+  git clone https://github.com/polaroidkidd/linux-setup.git
+fi
 # Init Submodules
 cd linux-setup
 git submodule update --init --recursive
@@ -25,11 +27,12 @@ WORK_PATH=$(dirname "$0")
 WORK_PATH=$( (cd "$WORK_PATH" && pwd))
 
 # i3 & i3-gaps
-sudo apt install -y xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
+sudo apt install -y make xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
 
 cd $WORK_PATH/xcb-util-xrm
 git submodule update --init --recursive
-./autogen.sh --prefix=/usr
+./autogen.sh --prefix=/usr --disable-dependency-tracking
+make
 sudo make install
 
 # i3
