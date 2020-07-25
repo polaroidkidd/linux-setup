@@ -142,7 +142,7 @@ tar xzvf jetbrains-toolbox-1.17.7275.tar.gz -C ~/DevTools/IntelliJ
 sudo apt install -y nextcloud-client
 
 # NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # Spotify
 sudo apt -y install spotify-client
