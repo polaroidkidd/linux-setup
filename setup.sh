@@ -135,8 +135,8 @@ sudo apt install -y firefox
 
 # Intellij
 mkdir -p ~/DevTools/IntelliJ
-wget https://download.jetbrains.com/idea/ideaIU-2019.3.1.tar.gz
-tar xzvf ideaIU-2019.3.1.tar.gz -C ~/DevTools/IntelliJ
+wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.17.7275.tar.gz
+tar xzvf jetbrains-toolbox-1.17.7275.tar.gz -C ~/DevTools/IntelliJ
 
 # nextcloud
 sudo apt install -y nextcloud-client
