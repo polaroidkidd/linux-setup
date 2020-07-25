@@ -2,7 +2,31 @@
 set -e
 set -x
 # Update Packages
-sudo apt update
+sudo apt update && sudo apt upgrade -yaml
+
+# brave
+sudo apt install -y apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+# code
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+# spotify
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+#speed ricer
+sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+wait
+
+# nextcloud
+sudo add-apt-repository -y ppa:nextcloud-devs/client
+wait
+
+sudo apt upde && sudo apt upgrade -yaml
 
 # Do all work in the tmp directory
 # Clone this repository
