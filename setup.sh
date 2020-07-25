@@ -81,7 +81,7 @@ sudo apt-get -y install python3 python3-pip python3-setuptools python3-wheel nin
 sudo pip3 install meson==0.54
 sudo meson setup build
 sudo ninja -C build
-sudo ninja -C build installsudo
+sudo ninja -C build install
 cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 
 
