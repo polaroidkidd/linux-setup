@@ -1,6 +1,6 @@
 set $mod Mod4
 
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 hide_edge_borders none
@@ -282,7 +282,6 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound vo
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 exec --no-startup-id pasystray
 
-
 # Dell Screen Brithness Commands
 # Keykode is XF86MonBrightnessUp and XF86MonBrightnessDown
 # Requires you get the keycodes with xev and install light from 
@@ -302,7 +301,7 @@ focus_wrapping no
 # Define Colors
 set $bg     #2c2c2e
 set $fg     #9f9f9f
-set $hi     #efef8f
+set $hi     #FF007F
 set $ac     #00d7ff
 set $tx     #040404
 set $ia     #9f9f9f
@@ -383,4 +382,4 @@ bindsym $mod+r mode "resize"
 # battery notification
 exec --no-startup-id /home/dle/DevTools/i3-battery-popup/i3-battery-popup -n -L 15
  
-#  bindsym ISO_Level3_Shift + Control_R /home/dle/.config/i3/altmod.sh
+bindsym $mod+dollar exec $HOME/.screenlayout/default.sh

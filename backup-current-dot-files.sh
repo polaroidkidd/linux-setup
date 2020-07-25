@@ -26,13 +26,11 @@ cp ~/.config/compton.conf $DOTFILE_PATH
 cp -r ~/.config/copyq $DOTFILE_PATH/
 cp -r ~/.config/polybar $DOTFILE_PATH/
 cp -r ~/.config/terminator $DOTFILE_PATH/
-cp -r ~/.icons $DOTFILE_PATH/.icons
 
 # custom desktop entries
 rm -rf desktop-entries
 mkdir desktop-entries
 sudo cp ~/.local/share/applications/whatsapp.desktop ./desktop-entries/
-sudo cp ~/.local/share/applications/telegram.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/plex.desktop ./desktop-entries/
 sudo cp ~/.local/share/applications/spotify.desktop ./desktop-entries/
 sudo cp /usr/share/applications/code.desktop ./desktop-entries/

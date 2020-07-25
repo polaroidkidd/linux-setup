@@ -284,7 +284,11 @@ export PATH="$PATH:/home/dle/.local/bin"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
+<<<<<<< HEAD
 # source ~/.envs/.all.sh
+=======
+source ~/.envs/.all.sh
+>>>>>>> feat/screen-reset-binding
 #  export GTK_IM_MODULE="xim"
 
 #####################################################
@@ -298,6 +302,8 @@ export PATH="$PATH:`yarn global bin`"
 export PATH="/home/dle/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 
 source <(doctl completion zsh)
+eval $(~/.linuxbrew/bin/brew shellenv)
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dle/.sdkman"
