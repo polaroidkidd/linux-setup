@@ -2,7 +2,7 @@
 set -e
 set -x
 # Update Packages
-sudo apt update && sudo apt upgrade -yaml
+sudo apt update && sudo apt upgrade -y
 
 # brave
 sudo apt install -y apt-transport-https curl
