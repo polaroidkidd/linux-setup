@@ -80,9 +80,6 @@ ninja -C build
 sudo ninja -C build install
 cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 
-# icons
-cp -r $WORK_PATH/FlatWoken/FlatWoken ~/.icons
-cp -r $WORK_PATH/FlatWoken/FlatWokenMin ~/.icons
 
 
 # plymouth
