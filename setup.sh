@@ -13,7 +13,7 @@ if [ ! -d "$TEMP_WORK_DIR" ]; then
   git clone https://github.com/polaroidkidd/linux-setup.git
 fi
 # Init Submodules
-cd linux-setup
+cd ~/temporary-linux-setup/linux-setup
 git submodule update --init --recursive
 
 # update permissions
