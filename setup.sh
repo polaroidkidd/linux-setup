@@ -27,12 +27,15 @@ WORK_PATH=$( (cd "$WORK_PATH" && pwd))
 
 # i3 & i3-gaps
 sudo apt install -y make xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
-
-cd $WORK_PATH/xcb-util-xrm
-git submodule update --init --recursive
-./autogen.sh --prefix=/usr --disable-dependency-tracking
-make
-sudo make install
+sudo apt-get install libxcb-xrm-dev
+# cd $WORK_PATH/xcb-util-xrm
+# git submodule update --init --recursive
+# ./autogen.sh --prefix=/usr --disable-dependency-tracking
+# make
+# sudo make install
+sudo add-apt-repository ppa:aguignard/ppa
+sudo apt update
+sudo apt install xcb-util-xrm
 
 # i3
 sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
