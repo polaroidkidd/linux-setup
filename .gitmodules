@@ -16,3 +16,6 @@
 [submodule "FlatWoken"]
 	path = FlatWoken
 	url = https://github.com/alecive/FlatWoken.git
+[submodule "nerd-fonts"]
+	path = nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts
