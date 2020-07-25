@@ -26,7 +26,7 @@ wait
 sudo add-apt-repository -y ppa:nextcloud-devs/client
 wait
 
-sudo apt upde && sudo apt upgrade -yaml
+sudo apt upde && sudo apt upgrade -y
 
 # Do all work in the tmp directory
 # Clone this repository
