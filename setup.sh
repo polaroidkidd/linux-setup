@@ -82,6 +82,7 @@ sudo pip3 install meson==0.54
 sudo meson setup build
 sudo ninja -C build
 sudo ninja -C build install
+mkdir -p ~/.config/rofi
 cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 
 
