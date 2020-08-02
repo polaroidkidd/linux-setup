@@ -1,9 +1,6 @@
 [submodule "compton"]
 	path = submodules/compton
 	url = https://github.com/tryone144/compton.git
-[submodule "xcb-util-xrm"]
-	path = xcb-util-xrm
-	url = https://github.com/Airblader/xcb-util-xrm
 [submodule "i3-gaps"]
 	path = submodules/i3
 	url = https://www.github.com/Airblader/i3
@@ -19,3 +16,6 @@
 [submodule "nerd-fonts"]
 	path = submodules/nerd-fonts
 	url = https://github.com/ryanoasis/nerd-fonts.git
+[submodule "xcb-util-xrm"]
+	path = submodules/xcb-util-xrm
+	url = https://github.com/Airblader/xcb-util-xrm
