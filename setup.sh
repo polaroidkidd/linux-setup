@@ -290,6 +290,5 @@ cd ~/
 sudo rm -rf ~/temporary-linux-setup
 set +x
 # Complete
-echo "Installation Completed! Rebooting in 10"
-sleep 10
-sudo reboot
+echo "Installation Completed! Don't forget to set the grub screen to 'splash' and update the dark_planat.plymouth theme!"
+
