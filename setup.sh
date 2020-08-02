@@ -48,6 +48,7 @@ cd linux-setup
 # get the path to this script
 WORK_PATH=$(dirname "$0")
 WORK_PATH=$( (cd "$WORK_PATH" && pwd))
+SUBMODULE_PATH=$WORK_PATH/Submodules
 
 # i3 & i3-gaps
 sudo apt install -y make xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
@@ -61,7 +62,7 @@ sudo make install
 # i3
 sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 
-cd $WORK_PATH/i3
+cd $SUBMODULE_PATH/i3
 git checkout gaps-next
 autoreconf --force --install
 rm -rf build
@@ -73,13 +74,13 @@ sudo make install
 
 # Compton
 sudo apt install -y asciidoc pkg-config make gcc libev-libevent-dev libdbus-1-dev libgl1-mesa-dev libgles2-mesa-dev libxcb-present-dev libxcb-sync-dev libxcb-damage0-dev libx11-xcb-dev libev4 libev-dev uthash-dev libxdg-basedir-dev libconfig-dev meson libx11-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-shape0-dev libxcb-xkb-dev pkg-config xcb-proto libxcb-xrm-dev libxcb-composite0-dev xcb libxcb-ewmh2 libxcb1-dev libxcb-keysyms1-dev libxcb-util0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcomposite-dev libxrandr-dev libxinerama-dev make cmake automake autoconf xdotool libxdamage-dev libdrm-dev
-cd $WORK_PATH/compton
+cd $SUBMODULE_PATH/compton
 make
 make docs
 sudo make install
 
 # Light
-mkdir -p $WORK_PATH/light
+mkdir -p $SUBMODULE_PATH/light
 cd $WORK_PATH/light
 wget https://github.com/haikarainen/light/releases/download/v1.2/light-1.2.tar.gz
 tar xf light-1.2.tar.gz
@@ -99,7 +100,7 @@ sudo apt install -y ranger terminator
 # rofi
 sudo apt -y remove meson # not needed because we're using the latest python implementation
 rm -rf ./rofi
-git clone --recursive https://github.com/davedavenport/rofi.git
+# git clone --recursive https://github.com/davedavenport/rofi.git
 cd ./rofi
 sudo apt-get -y install python3 python3-pip python3-setuptools python3-wheel ninja-build librsvg2-dev libjpeg-dev flex bison check libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev libglib2.0-dev libstartup-notification0-dev libxkbcommon-dev libxcb1-dev doxygen doxygen uncrustify cppcheck ohcount ronn
 sudo pip3 install meson==0.54
@@ -263,7 +264,7 @@ curl -s "https://get.sdkman.io" | bash
 # fonts
 # cd $WORK_PATH
 cd $WORK_PATH
-git clone https://github.com/ryanoasis/nerd-fonts.git
+# git clone https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 bash ./install.sh
 cd $WORK_PATH

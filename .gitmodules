@@ -1,18 +1,21 @@
 [submodule "compton"]
-	path = compton
+	path = submodules/compton
 	url = https://github.com/tryone144/compton.git
 [submodule "xcb-util-xrm"]
 	path = xcb-util-xrm
 	url = https://github.com/Airblader/xcb-util-xrm
 [submodule "i3-gaps"]
-	path = i3
+	path = submodules/i3
 	url = https://www.github.com/Airblader/i3
 [submodule "rofi"]
-	path = rofi
+	path = submodules/rofi
 	url = https://github.com/davatorium/rofi.git
 [submodule "plymouth-themes"]
-	path = plymouth-themes
+	path = submodules/plymouth-themes
 	url = https://github.com/adi1090x/plymouth-themes.git
 [submodule "FlatWoken"]
-	path = FlatWoken
+	path = submodules/FlatWoken
 	url = https://github.com/alecive/FlatWoken.git
+[submodule "nerd-fonts"]
+	path = submodules/nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts.git
