@@ -30,14 +30,14 @@ sudo apt update && sudo apt upgrade -y
 
 # Do all work in the tmp directory
 # Clone this repository
-TEMP_WORK_DIR=~/temporary-linux-setup/linux-setup
+TEMP_WORK_DIR=/tmp/linux-setup
 if [ ! -d "$TEMP_WORK_DIR" ]; then
-  mkdir ~/temporary-linux-setup
-  cd ~/temporary-linux-setup
+  cd /tmp
   git clone https://github.com/polaroidkidd/linux-setup.git
+  git checkout fix/ubuntu-20.04-install-script-fixes
 fi
 # Init Submodules
-cd ~/temporary-linux-setup/linux-setup
+cd /tmp/linux-setup
 git submodule update --init --recursive
 
 # update permissions
@@ -259,6 +259,8 @@ curl -s "https://get.sdkman.io" | bash
 
 # fonts
 # cd $WORK_PATH
+cd $WORK_PATH
+git clone https://github.com/ryanoasis/nerd-fonts.git
 sudo bash $WORK_PATH/nerd-fonts/install.sh
 
 # thunar
