@@ -272,11 +272,11 @@ sudo gem install fusuma
 
 # rofi
 sudo apt -y remove meson # not needed because we're using the latest python implementation
-# rm -rf ./rofi
-# git clone --recursive https://github.com/davedavenport/rofi.git
+cd $SUBMODULE_PATH
+sudo rm -rf ./rofi
+git clone --recursive https://github.com/davedavenport/rofi.git
 cd $SUBMODULE_PATH/rofi
 git submodule update --init --recursive
-# sudo apt-get -y install 
 sudo pip3 install meson==0.54
 sudo meson setup build
 sudo ninja -C build
