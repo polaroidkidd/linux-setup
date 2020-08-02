@@ -3,7 +3,7 @@ set -e
 set -x
 # Update Packages
 sudo apt update && sudo apt upgrade -y
-
+wait
 # brave
 # sudo apt install -y
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
