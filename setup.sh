@@ -431,9 +431,7 @@ echo "run_im xim" >~/.xinputrc
 sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.desktop
 sudo apt remove -y gnome-desktop3-data
 
-# CleanUp
-cd ~/
-sudo rm -rf ~/temporary-linux-setup
+
 set +x
 # Complete
 echo "Installation Completed! Don't forget to set the grub screen to 'splash' and update the dark_planat.plymouth theme!"
