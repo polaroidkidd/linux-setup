@@ -115,8 +115,8 @@ cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 cd $WORK_PATH/plymouth-themes
 sudo apt install -y plymouth-themes
 sudo cp -r pack_2/dark_planet /usr/share/plymouth/themes
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dark_planet 100
-echo "0" | sudo update-alternatives --config default.plymouth
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dark_planet/dark_planet.plymouth 100
+sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u
 cd $WORK_PATH
 
@@ -134,7 +134,6 @@ cd $WORK_PATH/DisplayDriver/
 sudo chmod +x ./displaylink-driver-5.3.1.34.run
 sudo ./displaylink-driver-5.3.1.34.run
 
-cp $WORK_PATH/dot-files/oh-my-zsh/.zshrc ~/.zshrc
 
 # polybar
 sudo apt install -y polybar
@@ -261,8 +260,9 @@ curl -s "https://get.sdkman.io" | bash
 # cd $WORK_PATH
 cd $WORK_PATH
 git clone https://github.com/ryanoasis/nerd-fonts.git
-sudo bash $WORK_PATH/nerd-fonts/install.sh
-
+cd nerd-fonts
+bash ./install.sh
+cd $WORK_PATH
 # thunar
 sudo apt install -y thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
 
@@ -275,6 +275,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # ZSH Syntax Highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+cp $WORK_PATH/dot-files/oh-my-zsh/.zshrc ~/.zshrc
 
 # handle emojis (disabled)
 echo "run_im xim" >~/.xinputrc
