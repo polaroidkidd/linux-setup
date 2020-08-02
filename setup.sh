@@ -59,7 +59,7 @@ cd linux-setup
 # get the path to this script
 WORK_PATH=$(dirname "$0")
 WORK_PATH=$( (cd "$WORK_PATH" && pwd))
-SUBMODULE_PATH=$WORK_PATH/Submodules
+SUBMODULE_PATH=$WORK_PATH/submodules
 
 
 # install everyting
