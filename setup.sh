@@ -34,10 +34,10 @@ TEMP_WORK_DIR=/tmp/linux-setup
 if [ ! -d "$TEMP_WORK_DIR" ]; then
   cd /tmp
   git clone https://github.com/polaroidkidd/linux-setup.git
-  git checkout fix/ubuntu-20.04-install-script-fixes
 fi
 # Init Submodules
 cd /tmp/linux-setup
+git checkout fix/ubuntu-20.04-install-script-fixes
 git submodule update --init --recursive
 
 # update permissions
