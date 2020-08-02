@@ -291,8 +291,8 @@ cd $SUBMODULE_PATH/plymouth-themes
 # sudo apt install -y
 sudo cp -r pack_2/dark_planet /usr/share/plymouth/themes
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dark_planet/dark_planet.plymouth 100
-sudo update-alternatives --config default.plymouth
-sudo update-initramfs -u
+# echo "2" | sudo update-alternatives --config default.plymouth
+# sudo update-initramfs -u
 cd $WORK_PATH
 
 # Copy dot-files
