@@ -2,7 +2,9 @@
 set -e
 set -x
 # Update Packages
-sudo apt update && sudo apt upgrade -y
+sudo apt update
+wait
+sudo apt upgrade -y
 wait
 # brave
 # sudo apt install -y
