@@ -49,7 +49,7 @@ fi
 # Init Submodules
 cd /tmp/linux-setup
 git checkout fix/ubuntu-20.04-install-script-fixes
-git submodule update --init --recursive
+git submodule update --init
 
 # update permissions
 cd ..
@@ -198,7 +198,30 @@ sudo apt install -y  \
                       thunar-media-tags-plugin \
                       thunar-vcs-plugin \
                       thunar-volman \
-                      google-cloud-sdk
+                      google-cloud-sdk \
+                      python3 \ 
+                      python3-pip \ 
+                      python3-setuptools \ 
+                      python3-wheel \ 
+                      ninja-build \ 
+                      librsvg2-dev \ 
+                      libjpeg-dev \ 
+                      flex \ 
+                      bison \ 
+                      check \ 
+                      libpango1.0-dev \ 
+                      libpangocairo-1.0-0 \ 
+                      libcairo2-dev \ 
+                      libglib2.0-dev \ 
+                      libstartup-notification0-dev \ 
+                      libxkbcommon-dev \ 
+                      libxcb1-dev \ 
+                      doxygen \ 
+                      doxygen \ 
+                      uncrustify \ 
+                      cppcheck \ 
+                      ohcount \ 
+                      ronn
 
 # i3 & i3-gaps
 # sudo apt install -y
@@ -225,6 +248,7 @@ sudo make install
 # Compton
 # sudo apt install -y
 cd $SUBMODULE_PATH/compton
+git submodule update --init
 make
 make docs
 sudo make install
@@ -252,7 +276,8 @@ sudo apt -y remove meson # not needed because we're using the latest python impl
 # rm -rf ./rofi
 # git clone --recursive https://github.com/davedavenport/rofi.git
 cd $SUBMODULE_PATH/rofi
-sudo apt-get -y install python3 python3-pip python3-setuptools python3-wheel ninja-build librsvg2-dev libjpeg-dev flex bison check libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev libglib2.0-dev libstartup-notification0-dev libxkbcommon-dev libxcb1-dev doxygen doxygen uncrustify cppcheck ohcount ronn
+git submodule update --init --recursive
+# sudo apt-get -y install 
 sudo pip3 install meson==0.54
 sudo meson setup build
 sudo ninja -C build
