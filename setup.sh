@@ -5,7 +5,7 @@ set -x
 sudo apt update && sudo apt upgrade -y
 
 # brave
-sudo apt install -y apt-transport-https curl
+# sudo apt install -y
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
@@ -27,6 +27,15 @@ sudo add-apt-repository -y ppa:nextcloud-devs/client
 wait
 
 sudo apt update && sudo apt upgrade -y
+
+# Google Cloud SDK
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# Import the Google Cloud Platform public key
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+
+
+
 
 # Do all work in the tmp directory
 # Clone this repository
@@ -50,9 +59,148 @@ WORK_PATH=$(dirname "$0")
 WORK_PATH=$( (cd "$WORK_PATH" && pwd))
 SUBMODULE_PATH=$WORK_PATH/Submodules
 
+
+# install everyting
+sudo apt install -y  \
+                      apt-transport-https \
+                      curl \
+                      make \
+                      xorg \
+                      i3 \
+                      i3lock-fancy \
+                      xserver-xorg \
+                      xutils-dev \
+                      libxcb1-dev \
+                      libxcb-keysyms1-dev \
+                      libpango1.0-dev \
+                      libxcb-util0-dev \
+                      libxcb-icccm4-dev \
+                      libyajl-dev \
+                      libstartup-notification0-dev \
+                      libxcb-randr0-dev \
+                      libev-dev \
+                      libxcb-cursor-dev \
+                      libxcb-xinerama0-dev \
+                      libxcb-xkb-dev \
+                      libxkbcommon-dev \
+                      libxkbcommon-x11-dev \
+                      autoconf \
+                      xutils-dev \
+                      libtool \
+                      automake \
+                      libxcb1-dev \
+                      libxcb-keysyms1-dev \
+                      libpango1.0-dev \
+                      libxcb-util0-dev \
+                      libxcb-icccm4-dev \
+                      libyajl-dev \
+                      libstartup-notification0-dev \
+                      libxcb-randr0-dev \
+                      libev-dev \
+                      libxcb-cursor-dev \
+                      libxcb-xinerama0-dev \
+                      libxcb-xkb-dev \
+                      libxkbcommon-dev \
+                      libxkbcommon-x11-dev \
+                      autoconf \
+                      libxcb-xrm0 \
+                      libxcb-xrm-dev \
+                      automake \
+                      libxcb-shape0-dev \
+                      asciidoc \
+                      pkg-config \
+                      make \
+                      gcc \
+                      libev-libevent-dev \
+                      libdbus-1-dev \
+                      libgl1-mesa-dev \
+                      libgles2-mesa-dev \
+                      libxcb-present-dev \
+                      libxcb-sync-dev \
+                      libxcb-damage0-dev \
+                      libx11-xcb-dev \
+                      libev4 \
+                      libev-dev \
+                      uthash-dev \
+                      libxdg-basedir-dev \
+                      libconfig-dev \
+                      meson \
+                      libx11-dev \
+                      libxcb1-dev \
+                      libxcb-ewmh-dev \
+                      libxcb-icccm4-dev \
+                      libxcb-image0-dev \
+                      libxcb-randr0-dev \
+                      libxcb-util0-dev \
+                      libxcb-shape0-dev \
+                      libxcb-xkb-dev \
+                      pkg-config \
+                      xcb-proto \
+                      libxcb-xrm-dev \
+                      libxcb-composite0-dev \
+                      xcb \
+                      libxcb-ewmh2 \
+                      libxcb1-dev \
+                      libxcb-keysyms1-dev \
+                      libxcb-util0-dev \
+                      libxcb-randr0-dev \
+                      libev-dev \
+                      libxcb-cursor-dev \
+                      libxcb-xinerama0-dev \
+                      libxcomposite-dev \
+                      libxrandr-dev \
+                      libxinerama-dev \
+                      make \
+                      cmake \
+                      automake \
+                      autoconf \
+                      xdotool \
+                      libxdamage-dev \
+                      libdrm-dev \
+                      libinput-tools \
+                      ruby \
+                      ranger \
+                      terminator \
+                      plymouth-themes \
+                      polybar \
+                      feh \
+                      apt-transport-https \
+                      code \
+                      pulseaudio \
+                      pulseaudio-module-bluetooth \
+                      pulseaudio-utils \
+                      pavucontrol \
+                      pasystray \
+                      blueman \
+                      bluez \
+                      bluez-obexd \
+                      bluez-tools \
+                      libbluetooth3 \
+                      apt-transport-https \
+                      curl \
+                      brave-browser \
+                      brave-keyring \
+                      firefox \
+                      nextcloud-client \
+                      copyq \
+                      keepassx \
+                      network-manager \
+                      network-manager-config-connectivity-ubuntu \
+                      network-manager-gnome \
+                      network-manager-openvpn \
+                      network-manager-openvpn-gnome \
+                      zsh \
+                      thunar \
+                      thunar-archive-plugin \
+                      thunar-data \
+                      thunar-media-tags-plugin \
+                      thunar-vcs-plugin \
+                      thunar-volman \
+                      google-cloud-sdk
+
 # i3 & i3-gaps
-sudo apt install -y make xorg i3 i3lock-fancy xserver-xorg xutils-dev libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
-cd $WORK_PATH/xcb-util-xrm
+# sudo apt install -y
+cd $SUBMODULE_PATH/xcb-util-xrm
 git submodule update --init
 ./autogen.sh --prefix=/usr --disable-dependency-tracking
 make
@@ -60,7 +208,7 @@ sudo make install
 
 
 # i3
-sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
+# sudo apt install -y
 
 cd $SUBMODULE_PATH/i3
 git checkout gaps-next
@@ -73,7 +221,7 @@ make
 sudo make install
 
 # Compton
-sudo apt install -y asciidoc pkg-config make gcc libev-libevent-dev libdbus-1-dev libgl1-mesa-dev libgles2-mesa-dev libxcb-present-dev libxcb-sync-dev libxcb-damage0-dev libx11-xcb-dev libev4 libev-dev uthash-dev libxdg-basedir-dev libconfig-dev meson libx11-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-shape0-dev libxcb-xkb-dev pkg-config xcb-proto libxcb-xrm-dev libxcb-composite0-dev xcb libxcb-ewmh2 libxcb1-dev libxcb-keysyms1-dev libxcb-util0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcomposite-dev libxrandr-dev libxinerama-dev make cmake automake autoconf xdotool libxdamage-dev libdrm-dev
+# sudo apt install -y
 cd $SUBMODULE_PATH/compton
 make
 make docs
@@ -91,17 +239,17 @@ sudo make install
 
 # Fusuma
 sudo gpasswd -a $USER input
-sudo apt install -y libinput-tools ruby
+# sudo apt install -y
 sudo gem install fusuma
 
 # Extra Tools
-sudo apt install -y ranger terminator
+# sudo apt install -y
 
 # rofi
 sudo apt -y remove meson # not needed because we're using the latest python implementation
-rm -rf ./rofi
+# rm -rf ./rofi
 # git clone --recursive https://github.com/davedavenport/rofi.git
-cd ./rofi
+cd $SUBMODULE_PATH/rofi
 sudo apt-get -y install python3 python3-pip python3-setuptools python3-wheel ninja-build librsvg2-dev libjpeg-dev flex bison check libpango1.0-dev libpangocairo-1.0-0 libcairo2-dev libglib2.0-dev libstartup-notification0-dev libxkbcommon-dev libxcb1-dev doxygen doxygen uncrustify cppcheck ohcount ronn
 sudo pip3 install meson==0.54
 sudo meson setup build
@@ -113,8 +261,8 @@ cp -r $WORK_PATH/dot-files/rofi ~/.config/rofi
 
 
 # plymouth
-cd $WORK_PATH/plymouth-themes
-sudo apt install -y plymouth-themes
+cd $SUBMODULE_PATH/plymouth-themes
+# sudo apt install -y
 sudo cp -r pack_2/dark_planet /usr/share/plymouth/themes
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dark_planet/dark_planet.plymouth 100
 sudo update-alternatives --config default.plymouth
@@ -137,25 +285,25 @@ sudo ./displaylink-driver-5.3.1.34.run
 
 
 # polybar
-sudo apt install -y polybar
+# sudo apt install -y
 
 # wallpaper
-sudo apt install -y feh
+# sudo apt install -y
 
 # VS Code
-sudo apt install -y apt-transport-https code
+# sudo apt install -y
 
 # pulse audio
-sudo apt install -y pulseaudio pulseaudio-module-bluetooth pulseaudio-utils pavucontrol pasystray
+# sudo apt install -y
 
 # bluetooth
-sudo apt install -y blueman bluez bluez-obexd bluez-tools libbluetooth3
+# sudo apt install -y
 
 # Brave Browser
-sudo apt install -y apt-transport-https curl brave-browser brave-keyring
+# sudo apt install -y
 
 # FireFox
-sudo apt install -y firefox
+# sudo apt install -y
 
 # Intellij
 mkdir -p ~/DevTools/IntelliJ
@@ -163,7 +311,7 @@ wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.17.7275.tar.gz
 tar xzvf jetbrains-toolbox-1.17.7275.tar.gz -C ~/DevTools/IntelliJ
 
 # nextcloud
-sudo apt install -y nextcloud-client
+# sudo apt install -y
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -180,10 +328,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 # CopyQ
-sudo apt install -y copyq
+# sudo apt install -y
 
 # keepassX
-sudo apt install -y keepassx
+# sudo apt install -y
 
 # Install Fonts
 unzip $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
@@ -229,7 +377,7 @@ sudo wget \
 
 # Network-Manager
 cd $WORK_PATH
-sudo apt install -y network-manager network-manager-config-connectivity-ubuntu network-manager-gnome
+# sudo apt install -y
 if [[ -f /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf ]]; then
   sudo rm /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
 fi
@@ -240,23 +388,16 @@ fi
 sudo cp $WORK_PATH/network-manager/interfaces /etc/network/interfaces
 sudo touch /usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf
 sudo cp $WORK_PATH/network-manager/01-netcfg.yaml /etc/netplan/01-netcfg.yaml
-sudo apt install -y network-manager-openvpn network-manager-openvpn-gnome
+# sudo apt install -y
 
 # zsh
-sudo apt install -y zsh
+# sudo apt install -y
 echo "y" | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo chsh -s /usr/bin/zsh root
 sudo chsh -s /usr/bin/zsh $USER
 
 # google cloud cli
 # Add the Cloud SDK distribution URI as a package source
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-
-# Import the Google Cloud Platform public key
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-
-# Update the package list and install the Cloud SDK
-sudo apt-get update && sudo apt-get install google-cloud-sdk
 
 # sdk man
 curl -s "https://get.sdkman.io" | bash
@@ -265,11 +406,11 @@ curl -s "https://get.sdkman.io" | bash
 # cd $WORK_PATH
 cd $WORK_PATH
 # git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
+cd $SUBMODULE_PATH/nerd-fonts
 bash ./install.sh
 cd $WORK_PATH
 # thunar
-sudo apt install -y thunar thunar-archive-plugin thunar-data thunar-media-tags-plugin thunar-vcs-plugin thunar-volman
+# sudo apt install -y
 
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt
