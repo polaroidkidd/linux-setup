@@ -254,7 +254,7 @@ sudo make install
 
 # Light
 mkdir -p $SUBMODULE_PATH/light
-cd $WORK_PATH/light
+cd $SUBMODULE_PATH/light
 wget https://github.com/haikarainen/light/releases/download/v1.2/light-1.2.tar.gz
 tar xf light-1.2.tar.gz
 cd light-1.2
