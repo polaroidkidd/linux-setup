@@ -100,12 +100,15 @@ ZSH_THEME="spaceship"
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  z
   git
   ssh-agent
   zsh-syntax-highlighting
   zsh-autosuggestions
- )
-
+  sudo
+  zsh-completions
+)
+  autoload -U compinit && compinit
 
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
@@ -126,8 +129,8 @@ zstyle :omz:plugins:ssh-agent lifetime
 
 source $ZSH/oh-my-zsh.sh
 
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+# fpath=(~/.zsh/completion $fpath)
+# autoload -Uz compinit && compinit -i
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))

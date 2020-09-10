@@ -142,8 +142,9 @@ bindsym $mod+Ctrl+0 move container to workspace $ws8; workspace $ws10
 # Open specific applications in floating mode
 for_window [class="Emulator"] floating enable sticky disable border none  
 for_window [title="^Android Emulator -"] floating enable sticky disable border none
-for_window [title="Udeler | Udemy Course Downloader"] floating disable sticky disable enable boarder normal 
-for_window [class="Keepassx"] floating enable sticky enable border normal
+for_window [title="Udeler | Udemy Course Downloader"] floating disable sticky disable enable boarder none 
+for_window [class="Keepassx"] floating enable sticky enable border none
+for_window [class="Bitwarden"] floating enable sticky enable border none
 for_window [title="win0" ] floating enable
 
 
