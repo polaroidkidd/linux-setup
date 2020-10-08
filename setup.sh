@@ -17,8 +17,8 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 # spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+# curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+# echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 #speed ricer
 sudo add-apt-repository -y ppa:kgilmer/speed-ricer
@@ -343,7 +343,7 @@ tar xzvf jetbrains-toolbox-1.17.7275.tar.gz -C ~/DevTools/IntelliJ
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # Spotify
-sudo apt -y install spotify-client
+# sudo apt -y install spotify-client
 
 # github cli
 sudo snap install hub --classic
