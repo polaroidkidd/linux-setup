@@ -248,7 +248,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+b exec --no-startup-id blueman-manager
 focus_follows_mouse no
 
 for_window [class="copyq"] floating enable
@@ -383,4 +382,12 @@ bindsym $mod+r mode "resize"
 # battery notification
 exec --no-startup-id /home/dle/DevTools/i3-battery-popup/i3-battery-popup -n -L 15
  
+# reset screen to default mode
 bindsym $mod+dollar exec $HOME/.screenlayout/default.sh
+
+# toggle bluetooth
+bindsym $mod+b exec --no-startup-id /home/dle/DevWork/me/tools/bluetooth-blueman-toggler/toggle-bluetooth.sh
+
+
+# decrease mouse sensitivity
+exec_always xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Accel Speed" 0.7

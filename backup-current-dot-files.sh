@@ -41,7 +41,7 @@ cp ~/.zshrc $DOTFILE_PATH/oh-my-zsh
 
 # intel graphics
 mkdir -p $DOTFILE_PATH/intel
-sudo cp /usr/share/X11/xorg.conf.d/20-intel.conf $DOTFILE_PATH/intel/20-intel.conf
+sudo cp -r /usr/share/X11/xorg.conf.d $DOTFILE_PATH/intel/
 
 # git-config
 rm -rf ./git-config/

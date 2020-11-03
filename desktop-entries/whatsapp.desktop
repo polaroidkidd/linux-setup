@@ -2,7 +2,7 @@
 Name=WhatsApp
 GenericName=Chat
 Icon=/home/dle/.icons/FlatWoken/scalable/apps/whatsapp.svg
-Exec=brave-browser --app=https://web.whatsapp.com/
+Exec=firefox --new-window https://web.whatsapp.com/
 Terminal=false
 Type=Application
 Categories=Chat;

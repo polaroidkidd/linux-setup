@@ -1,0 +1,19 @@
+[Commands]
+1\Automatic=true
+1\Command=copyq ignore
+1\Icon=\xf069
+1\Name=ignore keepassx
+1\Remove=true
+1\Window=KeePassX
+2\Automatic=true
+2\Command=copyq ignore
+2\Icon=\xf069
+2\Name=ignore Bitwarden
+2\Remove=true
+2\Window=Bitwarden
+3\Command=copyq: toggle()
+3\GlobalShortcut=alt+q
+3\Icon=\xf022
+3\IsGlobalShortcut=true
+3\Name=Show/hide main window
+size=3

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Plex
 Icon=display
-Exec=brave-browser --app=https://plex.dle.dev
+Exec=firefox --new-window https://plex.dle.dev
 Terminal=false
 Type=Application
 Categories=Media

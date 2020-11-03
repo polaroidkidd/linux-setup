@@ -1,3 +1,4 @@
+NVM_AUTOLOAD=1
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -106,7 +107,8 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   sudo
-  zsh-completions
+  safe-paste
+  nvm
 )
   autoload -U compinit && compinit
 
@@ -124,13 +126,15 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@github.com dae@gitlab.ti8m.ch pi@ebikon dle.xps@aero dle.xps@bitbucket.org
+zstyle :omz:plugins:ssh-agent identities dae.bn.aws@ti8m.ch dae@gitlab.ti8m.ch dle@github.com dle.xps@aero dle.xps@bitbucket.org dle.xps@cassandra dle.xps@pi dle.xps@vps.faber.dev pi@ebikon 
 zstyle :omz:plugins:ssh-agent lifetime
+
 
 source $ZSH/oh-my-zsh.sh
 
-# fpath=(~/.zsh/completion $fpath)
-# autoload -Uz compinit && compinit -i
+fpath=(~/.zsh/completion $fpath)
+fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
+autoload -Uz compinit && compinit -i
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))
@@ -186,7 +190,6 @@ function __drm() {
   docker-compose stop ${1}
   wait
   echo "y" | dc rm ${1}
- 
 }
 
 function __dcwipe(){
@@ -247,11 +250,6 @@ alias tas="__tas"
 alias tkill="__tkill"
 
 
-
-# NVM
-export NVM_DIR="/home/dle/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
 # Yarn
 # alias node=nodejs
 
@@ -303,7 +301,13 @@ export PATH="/home/dle/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 source <(doctl completion zsh)
 eval $(~/.linuxbrew/bin/brew shellenv)
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dle/.sdkman"
 [[ -s "/home/dle/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dle/.sdkman/bin/sdkman-init.sh"
+

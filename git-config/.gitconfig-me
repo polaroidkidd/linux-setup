@@ -1,3 +1,6 @@
 [user]
    name = Daniel Einars
    email = "contact@dle.dev"
+   signingkey = "1587E8BCAD3B48FB"
+[commit]
+   gpgsign = true

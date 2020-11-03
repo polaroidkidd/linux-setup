@@ -16,3 +16,5 @@ process = git-lfs filter-process
 required = true
 [cola]
 	spellcheck = false
+[gpg]
+	program = /usr/bin/gpg
