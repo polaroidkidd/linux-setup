@@ -262,7 +262,7 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 
 # Enable Tapping on Keyboard
 exec_always xinput set-prop  "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
-exec_always xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Accel Speed" 1
+exec_always xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Accel Speed" 0.5
 
 # Next Cloud
 exec --no-startup-id nextcloud
@@ -387,7 +387,4 @@ bindsym $mod+dollar exec $HOME/.screenlayout/default.sh
 
 # toggle bluetooth
 bindsym $mod+b exec --no-startup-id /home/dle/DevWork/me/tools/bluetooth-blueman-toggler/toggle-bluetooth.sh
-
-
-# decrease mouse sensitivity
-exec_always xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Accel Speed" 0.7
+bindsym $mod+Ctrl+b exec --no-startup-id /usr/bin/blueman-manager
