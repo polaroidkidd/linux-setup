@@ -336,6 +336,12 @@ mkdir -p ~/DevTools/IntelliJ
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.17.7275.tar.gz
 tar xzvf jetbrains-toolbox-1.17.7275.tar.gz -C ~/DevTools/IntelliJ
 
+# BlueTooth Toggler
+cd $WORK_PATH
+mkdir -p ~/DevWork/me/tools/bluetooth-blueman-toggler
+cd ~/DevWork/me/tools/bluetooth-blueman-toggler
+wget https://gist.githubusercontent.com/polaroidkidd/39bdd0c2041b0b9cc69d0be7d88590f2/raw/7415ac412da74d6e5f2031f48638e6837ff84842/toggle-bluetooth.sh
+chmod +x toggle-bluetooth.sh
 # nextcloud
 # sudo apt install -y
 
