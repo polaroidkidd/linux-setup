@@ -17,7 +17,7 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 # spotify
-# curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+# curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 # echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 #speed ricer
@@ -246,11 +246,43 @@ sudo make install
 
 # Compton
 # sudo apt install -y
-cd $SUBMODULE_PATH/compton
-git submodule update --init
-make
-make docs
-sudo make install
+#cd $SUBMODULE_PATH/compton
+#git submodule update --init
+#make
+#make docs
+#sudo make install
+
+sudo apt -y remove meson # not needed because we're using the latest python implementation
+sudo pip3 install meson==0.54
+
+# Picom
+cd $SUBMODULE_PATH/picom
+git submodule update --init --recursive
+sudo apt install libxext-dev \
+  libxcb1-dev \
+  libxcb-damage0-dev \
+  libxcb-xfixes0-dev \
+  libxcb-shape0-dev \
+  libxcb-render-util0-dev \
+  libxcb-render0-dev \
+  libxcb-randr0-dev \
+  libxcb-composite0-dev \
+  libxcb-image0-dev \
+  libxcb-present-dev \
+  libxcb-xinerama0-dev \
+  libxcb-glx0-dev \
+  libpixman-1-dev \
+  libdbus-1-dev \
+  libconfig-dev \
+  libgl1-mesa-dev \
+  libpcre2-dev \
+  libevdev-dev \
+  uthash-dev \
+  libev-dev \
+  libx11-xcb-dev
+meson --buildtype=release . build
+sudo ninja -C build
+sudo ninja -C build install
 
 # Light
 mkdir -p $SUBMODULE_PATH/light
@@ -438,8 +470,8 @@ curl -s "https://get.sdkman.io" | bash
 # cd $WORK_PATH
 cd $WORK_PATH
 # git clone https://github.com/ryanoasis/nerd-fonts.git
-cd $SUBMODULE_PATH/nerd-fonts
-bash ./install.sh
+#cd $SUBMODULE_PATH/nerd-fonts
+#bash ./install.sh
 cd $WORK_PATH
 # thunar
 # sudo apt install -y

@@ -13,9 +13,9 @@
 [submodule "FlatWoken"]
 	path = submodules/FlatWoken
 	url = https://github.com/alecive/FlatWoken.git
-[submodule "nerd-fonts"]
-	path = submodules/nerd-fonts
-	url = https://github.com/ryanoasis/nerd-fonts.git
+; [submodule "nerd-fonts"]
+; 	path = submodules/nerd-fonts
+; 	url = https://github.com/ryanoasis/nerd-fonts.git
 [submodule "xcb-util-xrm"]
 	path = submodules/xcb-util-xrm
 	url = https://github.com/Airblader/xcb-util-xrm
