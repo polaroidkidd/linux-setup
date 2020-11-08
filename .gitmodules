@@ -16,6 +16,6 @@
 [submodule "xcb-util-xrm"]
 	path = submodules/xcb-util-xrm
 	url = https://github.com/Airblader/xcb-util-xrm
-[submodule "submodules/picom"]
-	path = submodules/picom
-	url = https://github.com/yshui/picom.git
+[submodule "submodules/i3-radius"]
+	path = submodules/i3-radius
+	url = https://github.com/terroo/i3-radius

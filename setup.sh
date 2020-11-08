@@ -240,13 +240,18 @@ cd build
 make
 sudo make install
 
+sudo mv "$(which i3)" "$(which i3)_original"
+
+cd $SUBMODULE_PATH/i3-radius
+sh build.sh
+
 # Compton
 # sudo apt install -y
-#cd $SUBMODULE_PATH/compton
-#git submodule update --init
-#make
-#make docs
-#sudo make install
+cd $SUBMODULE_PATH/compton
+git submodule update --init
+make
+make docs
+sudo make install
 
 sudo apt -y remove meson # not needed because we're using the latest python implementation
 sudo pip3 install meson==0.54
