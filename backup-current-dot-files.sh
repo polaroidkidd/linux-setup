@@ -16,8 +16,8 @@ mkdir $DOTFILE_PATH
 mkdir -p $DOTFILE_PATH/i3
 mkdir -p $DOTFILE_PATH/fusuma
 mkdir -p $DOTFILE_PATH/polybar
-mkdir -p $DOTFILE_PATH/terminator
 mkdir -p $DOTFILE_PATH/icons
+mkdir -p $DOTFILE_PATH/gnome-shell
 
 cp ~/.config/i3/config $DOTFILE_PATH/i3/
 cp -r ~/.config/rofi $DOTFILE_PATH/
@@ -25,7 +25,8 @@ cp ~/.config/fusuma/config.yml $DOTFILE_PATH/fusuma/
 cp ~/.config/compton.conf $DOTFILE_PATH
 cp -r ~/.config/copyq $DOTFILE_PATH/
 cp -r ~/.config/polybar $DOTFILE_PATH/
-cp -r ~/.config/terminator $DOTFILE_PATH/
+cp -r ~/.config/gnome-shell 
+
 
 # custom desktop entries
 rm -rf desktop-entries
