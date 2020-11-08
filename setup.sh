@@ -342,27 +342,6 @@ sudo chmod +x ./displaylink-driver-5.3.1.34.run
 sudo ./displaylink-driver-5.3.1.34.run
 
 
-# polybar
-# sudo apt install -y
-
-# wallpaper
-# sudo apt install -y
-
-# VS Code
-# sudo apt install -y
-
-# pulse audio
-# sudo apt install -y
-
-# bluetooth
-# sudo apt install -y
-
-# Brave Browser
-# sudo apt install -y
-
-# FireFox
-# sudo apt install -y
-
 # Intellij
 mkdir -p ~/DevTools/IntelliJ
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.17.7275.tar.gz
@@ -380,8 +359,6 @@ chmod +x toggle-bluetooth.sh
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-# Spotify
-# sudo apt -y install spotify-client
 
 # github cli
 sudo snap install hub --classic
@@ -391,11 +368,6 @@ cd $WORK_PATH
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-# CopyQ
-# sudo apt install -y
-
-# keepassX
-# sudo apt install -y
 
 # Install Fonts
 unzip $WORK_PATH/Roboto_Mono.zip -d ${HOME}/.fonts
@@ -496,6 +468,8 @@ sudo apt remove -y gnome-desktop3-data
  #cd nerd-fonts
  #bash ./install.sh
 
+# Spotify
+# sudo apt -y install spotify-client
 
 set +x
 # Complete
