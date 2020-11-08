@@ -191,12 +191,8 @@ sudo apt install -y apt-transport-https \
                     network-manager-openvpn \
                     network-manager-openvpn-gnome \
                     zsh \
-                    thunar \
-                    thunar-archive-plugin \
-                    thunar-data \
-                    thunar-media-tags-plugin \
-                    thunar-vcs-plugin \
-                    thunar-volman \
+                    nautilus \
+                    nautilus-nextcloud \
                     google-cloud-sdk \
                     python3 \
                     python3-pip \
@@ -439,8 +435,6 @@ sudo chsh -s /usr/bin/zsh $USER
 curl -s "https://get.sdkman.io" | bash
 
 cd $WORK_PATH
-# thunar
-# sudo apt install -y
 
 # Space Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/themes/spaceship-prompt
