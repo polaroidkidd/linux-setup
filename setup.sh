@@ -331,8 +331,8 @@ cp -r $WORK_PATH/desktop-entries/* ~/.local/share/applications/
 
 # Install Intel/DisplayPort Driver
 sudo mkdir -p /usr/share/X11/xorg.conf.d/
-sudo cp $WORK_PATH/dot-files/intel/20-intel.conf /usr/share/X11/xorg.conf.d/20-intel.conf
-sudo cp $WORK_PATH/DisplayDriver/20-evdidevice.conf /usr/share/X11/xorg.conf.d/20-evdidevice.conf
+sudo cp $WORK_PATH/dot-files/intel/xorg.conf.d/*.conf /usr/share/X11/xorg.conf.d/
+
 cd $WORK_PATH/DisplayDriver/
 sudo chmod +x ./displaylink-driver-5.3.1.34.run
 sudo ./displaylink-driver-5.3.1.34.run
