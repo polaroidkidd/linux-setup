@@ -4,3 +4,4 @@ dot-files/copyq/copyq_tab_*.idea
 **/copyq*.bat
 **/copyq*.dat
 .idea/**
+.idea/
