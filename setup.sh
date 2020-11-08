@@ -253,37 +253,6 @@ make
 make docs
 sudo make install
 
-sudo apt -y remove meson # not needed because we're using the latest python implementation
-sudo pip3 install meson==0.54
-
-# Picom
-cd $SUBMODULE_PATH/picom
-git submodule update --init --recursive
-sudo apt install -y libxext-dev \
-  libxcb1-dev \
-  libxcb-damage0-dev \
-  libxcb-xfixes0-dev \
-  libxcb-shape0-dev \
-  libxcb-render-util0-dev \
-  libxcb-render0-dev \
-  libxcb-randr0-dev \
-  libxcb-composite0-dev \
-  libxcb-image0-dev \
-  libxcb-present-dev \
-  libxcb-xinerama0-dev \
-  libxcb-glx0-dev \
-  libpixman-1-dev \
-  libdbus-1-dev \
-  libconfig-dev \
-  libgl1-mesa-dev \
-  libpcre2-dev \
-  libevdev-dev \
-  uthash-dev \
-  libev-dev \
-  libx11-xcb-dev
-meson --buildtype=release . build
-sudo ninja -C build
-sudo ninja -C build install
 
 # Light
 mkdir -p $SUBMODULE_PATH/light
