@@ -466,12 +466,6 @@ sudo chsh -s /usr/bin/zsh $USER
 # sdk man
 curl -s "https://get.sdkman.io" | bash
 
-# fonts
-# cd $WORK_PATH
-cd $WORK_PATH
-# git clone https://github.com/ryanoasis/nerd-fonts.git
-#cd $SUBMODULE_PATH/nerd-fonts
-#bash ./install.sh
 cd $WORK_PATH
 # thunar
 # sudo apt install -y
@@ -494,6 +488,13 @@ echo "run_im xim" >~/.xinputrc
 # launch code with support for `ctrl+shift+e`
 sudo cp $WORK_PATH/desktop-entries/code.desktop /usr/share/applications/code.desktop
 sudo apt remove -y gnome-desktop3-data
+
+
+# fonts
+ #cd /tmp
+ #git clone https://github.com/ryanoasis/nerd-fonts.git
+ #cd nerd-fonts
+ #bash ./install.sh
 
 
 set +x
