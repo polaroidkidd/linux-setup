@@ -258,7 +258,7 @@ sudo pip3 install meson==0.54
 # Picom
 cd $SUBMODULE_PATH/picom
 git submodule update --init --recursive
-sudo apt install libxext-dev \
+sudo apt install -y libxext-dev \
   libxcb1-dev \
   libxcb-damage0-dev \
   libxcb-xfixes0-dev \
