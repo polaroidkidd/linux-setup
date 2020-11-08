@@ -161,7 +161,6 @@ sudo apt install -y apt-transport-https \
                     libinput-tools \
                     ruby \
                     ranger \
-                    terminator \
                     plymouth-themes \
                     polybar \
                     feh \
@@ -216,7 +215,8 @@ sudo apt install -y apt-transport-https \
                     uncrustify \
                     cppcheck \
                     ohcount \
-                    ronn
+                    ronn \
+                    gnome-terminal
 
 # i3 & i3-gaps
 # sudo apt install -y
