@@ -13,8 +13,8 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+y exec terminator # i3-aensible-terminal
-# bindsym $mod+y exec gnome-terminal
+# bindsym $mod+y exec terminator # i3-aensible-terminal
+bindsym $mod+y exec gnome-terminal --hide-menubar
 
 
 # Window kill command
@@ -146,6 +146,7 @@ for_window [title="Udeler | Udemy Course Downloader"] floating disable sticky di
 for_window [class="Keepassx"] floating enable sticky enable border none
 for_window [class="Bitwarden"] floating enable sticky enable border none
 for_window [title="win0" ] floating enable
+for_window [class="Org.gnome.Nautilus" ] floating enable
 
 
 # switch to workspace with urgent window automatically
@@ -197,19 +198,24 @@ bindsym $mod+shift+p exec /$HOME/.config/polybar/launch.sh
 
 
 # Theme colors
-client.focused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-client.urgent #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
-
-client.background #1f1f1f
+# client.focused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+# client.focused_inactive #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+# client.unfocused #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+# client.urgent #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+# client.placeholder #c6c6c6 #1f1f1f #c6c6c6 #8abeb7 #8abeb7
+# 
+# client.background #1f1f1f
 
 # Gaps
-gaps inner 5
-gaps outer 3
+gaps inner 10
+gaps outer 5
 
-smart_gaps on
+# smart_gaps on
+
+# smart_borders on
+# smart_borders no_gaps
+border_radius 2
+for_window [class=".*"] border pixel 2
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -301,7 +307,8 @@ focus_wrapping no
 # Define Colors
 set $bg     #2c2c2e
 set $fg     #9f9f9f
-set $hi     #FF007F
+set $hi     #5b96e3
+#set $hi     #FF007F
 set $ac     #00d7ff
 set $tx     #040404
 set $ia     #9f9f9f

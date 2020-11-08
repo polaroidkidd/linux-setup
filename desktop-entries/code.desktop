@@ -12,7 +12,7 @@ MimeType=text/plain;inode/directory;application/x-code-workspace;
 Actions=new-empty-window;
 Keywords=vscode;
 
-X-Desktop-File-Install-Version=0.23
+X-Desktop-File-Install-Version=0.24
 
 [Desktop Action new-empty-window]
 Name=New Empty Window

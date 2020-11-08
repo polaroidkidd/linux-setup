@@ -25,7 +25,7 @@ cp ~/.config/fusuma/config.yml $DOTFILE_PATH/fusuma/
 cp ~/.config/compton.conf $DOTFILE_PATH
 cp -r ~/.config/copyq $DOTFILE_PATH/
 cp -r ~/.config/polybar $DOTFILE_PATH/
-cp -r ~/.config/gnome-shell 
+cp -r ~/.config/gnome-shell $DOTFILE_PATH/
 
 
 # custom desktop entries

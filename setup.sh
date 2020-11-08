@@ -230,15 +230,15 @@ sudo make install
 # i3
 # sudo apt install -y
 
-cd $SUBMODULE_PATH/i3
-git checkout gaps-next
-autoreconf --force --install
-rm -rf build
-mkdir build
-cd build
-../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-make
-sudo make install
+# cd $SUBMODULE_PATH/i3
+# git checkout gaps-next
+# autoreconf --force --install
+# rm -rf build
+# mkdir build
+# cd build
+# ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+# make
+# sudo make install
 
 sudo mv "$(which i3)" "$(which i3)_original"
 
