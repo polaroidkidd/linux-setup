@@ -19,3 +19,6 @@
 [submodule "submodules/i3-radius"]
 	path = submodules/i3-radius
 	url = https://github.com/terroo/i3-radius
+[submodule "submodules/picom"]
+	path = submodules/picom
+	url = https://github.com/yshui/picom.git
