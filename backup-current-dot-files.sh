@@ -23,13 +23,11 @@ mkdir -p $DOTFILE_PATH/icons
 mkdir -p $DOTFILE_PATH/gnome-shell
 mkdir -p $DOTFILE_PATH/themes
 mkdir -p $DOTFILE_PATH/gtk
-mkdir -p $DOTFILE_PATH/compton
 mkdir -p $DOTFILE_PATH/picom
 
 cp ~/.config/i3/config $DOTFILE_PATH/i3/
 cp -r ~/.config/rofi $DOTFILE_PATH/
 cp ~/.config/fusuma/config.yml $DOTFILE_PATH/fusuma/
-cp ~/.config/compton.conf $DOTFILE_PATH/compton/
 cp -r ~/.config/copyq $DOTFILE_PATH/
 cp -r ~/.config/polybar $DOTFILE_PATH/
 cp -r ~/.config/gnome-shell $DOTFILE_PATH/
