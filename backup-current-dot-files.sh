@@ -24,6 +24,7 @@ mkdir -p $DOTFILE_PATH/gnome-shell
 mkdir -p $DOTFILE_PATH/themes
 mkdir -p $DOTFILE_PATH/gtk
 mkdir -p $DOTFILE_PATH/compton
+mkdir -p $DOTFILE_PATH/picom
 
 cp ~/.config/i3/config $DOTFILE_PATH/i3/
 cp -r ~/.config/rofi $DOTFILE_PATH/
@@ -39,6 +40,8 @@ cp -r ~/.config/gtk-2.0 $DOTFILE_PATH/gtk
 cp -r ~/.config/gtk-3.0 $DOTFILE_PATH/gtk
 cp -r ~/.config/gtk-2.0 $DOTFILE_PATH/gtk
 cp -r ~/.config/gtk-assets $DOTFILE_PATH/gtk
+cp ~/.config/picom/picom.conf $DOTFILE_PATH/picom/
+
 
 # custom desktop entries
 rm -rf desktop-entries

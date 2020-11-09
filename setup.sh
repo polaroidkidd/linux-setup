@@ -216,7 +216,29 @@ sudo apt install -y apt-transport-https \
                     cppcheck \
                     ohcount \
                     ronn \
-                    gnome-terminal
+                    gnome-terminal \
+                    libxext-dev \
+                    libxcb1-dev \
+                    libxcb-damage0-dev \
+                    libxcb-xfixes0-dev \
+                    libxcb-shape0-dev \
+                    libxcb-render-util0-dev \
+                    libxcb-render0-dev \
+                    libxcb-randr0-dev \
+                    libxcb-composite0-dev \
+                    libxcb-image0-dev \
+                    libxcb-present-dev \
+                    libxcb-xinerama0-dev \
+                    libxcb-glx0-dev \
+                    libpixman-1-dev \
+                    libdbus-1-dev \
+                    libconfig-dev \
+                    libgl1-mesa-dev \
+                    libpcre2-dev \
+                    libevdev-dev \
+                    uthash-dev \
+                    libev-dev \
+                    libx11-xcb-dev
 
 # i3 & i3-gaps
 # sudo apt install -y
@@ -227,32 +249,16 @@ make
 sudo make install
 
 
-# i3
-# sudo apt install -y
-
-# cd $SUBMODULE_PATH/i3
-# git checkout gaps-next
-# autoreconf --force --install
-# rm -rf build
-# mkdir build
-# cd build
-# ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-# make
-# sudo make install
-
-sudo mv "$(which i3)" "$(which i3)_original"
-
+# install I3-Gaps with Border Radius
 cd $SUBMODULE_PATH/i3-radius
 sh build.sh
 
-# Compton
-# sudo apt install -y
-cd $SUBMODULE_PATH/compton
-git submodule update --init
-make
-make docs
-sudo make install
-
+# install picom instead of compton
+cd $SUBMODULE_PATH/picom
+git submodule update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+sudo ninja -C build install
 
 # Light
 mkdir -p $SUBMODULE_PATH/light
