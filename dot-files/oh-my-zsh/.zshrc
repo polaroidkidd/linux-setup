@@ -158,6 +158,8 @@ alias gpt="git push --follow-tags"
 alias gip="git pull --verbose"
 alias gbdo="git push --delete origin"
 
+# core git editor
+export GIT_EDITOR=vim
 
 # function to commit and push all with a message in format of: gcp example text [ENTER TO SEND]
 function __gcp() {
@@ -227,7 +229,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 
 function __tns(){
-  tmux new-session -t ${1}
+  tmux new-session -s ${1}
 }
 
 function __tks(){
