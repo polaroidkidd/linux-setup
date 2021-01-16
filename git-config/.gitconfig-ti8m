@@ -1,6 +1,6 @@
 [user]
    name = Daniel Einars
    email = "daniel.einars@ti8m.ch"
-   signingkey = "6C9BA1E987201B11"
+   signingkey = "732671684D5242F7"
 [commit]
    gpgsign = true

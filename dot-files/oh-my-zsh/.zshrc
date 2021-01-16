@@ -134,6 +134,7 @@ source $ZSH/oh-my-zsh.sh
 
 fpath=(~/.zsh/completion $fpath)
 fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
+fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
 autoload -Uz compinit && compinit -i
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
@@ -151,7 +152,7 @@ alias ga="git add"
 alias gs="git status"
 alias gb="git branch -a"
 alias gco="git checkout"
-alias gcm="git commit -m"
+alias gcm="git commit -s -m"
 alias gp="git push"
 alias gpa="git push --all"
 alias gpt="git push --follow-tags"
@@ -188,7 +189,7 @@ function __begone() {
 
 # Docker & Docker-Compose alias
 alias dc="docker-compose"
-function __drm() {
+function __dcrm() {
   docker-compose stop ${1}
   wait
   echo "y" | dc rm ${1}
@@ -199,7 +200,14 @@ function __dcwipe(){
     echo "y" | docker-compose rm
     wait
     echo "y" | docker system prune -a
+  else
+    echo "Nothing to Remove"
+  
   fi
+}
+
+function __dvipe(){
+  echo "y" | docker volume prune -f
 }
 
 function __dwipe() {
@@ -208,6 +216,9 @@ function __dwipe() {
   echo "y" | docker system prune -a
 }
 
+function __dkill() {
+  docker stop `docker ps -aq`
+}
 
 function __dprune() {
   echo "y" | docker system prune -a
@@ -220,10 +231,12 @@ function __dprune() {
 
 
 alias dcwipe='__dcwipe'
+alias dcrm='__dcrm'
+
 alias dwipe='__dwipe'
 alias dprune='__dprune'
-
-
+alias dkill='__dkill'
+alias dvipe='__dvipe'
 # ranger exit in directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
@@ -304,6 +317,9 @@ source <(doctl completion zsh)
 eval $(~/.linuxbrew/bin/brew shellenv)
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# export PATH="$HOME/DevTools/blackblaze:$PATH"
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
