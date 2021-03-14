@@ -263,7 +263,7 @@ alias tns="__tns"
 alias tks="__tks"
 alias tas="__tas"
 alias tkill="__tkill"
-
+alias tls="tmux ls"
 
 # Yarn
 # alias node=nodejs

@@ -148,6 +148,9 @@ for_window [class="Bitwarden"] floating enable sticky enable border none
 for_window [title="win0" ] floating enable
 for_window [class="Org.gnome.Nautilus" ] floating enable
 for_window [class="Evolution-alarm-notify" ] floating enable
+for_window [title="Welcome to IntelliJ IDEA" ] floating enable
+for_window [class="Blueman-manager" ] floating enable
+for_window [class="Pavucontrol" ] floating enable
 
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus  
@@ -283,7 +286,7 @@ exec --no-startup-id /usr/local/bin/fusuma -d -c ~/.config/fusuma/config.yml
 bindsym $mod+c exec firefox
 
 # Shortcut to Start Brave
-bindsym $mod+g exec brave-browser
+# bindsym $mod+g exec google-chrome
 
 # Enable Audio Controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
